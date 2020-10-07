@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Pages/Home/Home";
 import Details from "./Components/Pages/Details/Details";
@@ -15,6 +15,7 @@ function App() {
           <Route path="/">
             <Home />
           </Route>
+
         </Switch>
       </div>
     </Router>
