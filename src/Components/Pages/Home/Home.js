@@ -1,5 +1,5 @@
 import React from 'react';
-import JobsCard from '../../JobsCard/JobsCard';
+import JobsCardContainer from '../../JobsCardContainer/JobsCardContainer';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
@@ -8,7 +8,7 @@ export default function Home() {
       <Container>
         <h2>Home</h2>
         <Row>
-          <JobsCard />
+          <JobsCardContainer />
         </Row>
       </Container>
     );
