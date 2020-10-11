@@ -5,7 +5,7 @@ import './JobsCard.css';
 
 export default function JobsCard() {
   return (
-    <Card className="text-center">
+    <Card className="text-center custom-card">
       <Card.Body>
         <Card.Title>Job and Company Applied to</Card.Title>
         <Button variant="light">See Details</Button>
