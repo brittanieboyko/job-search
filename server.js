@@ -1,9 +1,9 @@
 const express = require('express');
-const path = require('path');
+// const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const apiPort = 3001
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // const apiRouter = require('./routes/apiRoutes');
 
@@ -27,12 +27,16 @@ app.get('/', (req, res) => {
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/GameFinderDB", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false,
-//   useUnifiedTopology: true
-// });
+mongoose
+    .connect('mongodb://127.0.0.1:27017/jobs', {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true
+     })
+    .catch(e => {
+        console.error('Connection error', e.message)
+    })
 
-// mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 module.exports = app;
