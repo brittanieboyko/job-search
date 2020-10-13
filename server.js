@@ -1,10 +1,9 @@
 const express = require("express");
-// const path = require('path');
+const path = require('path');
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 const jobRouter = require("./routes/jobRouter");
-const apiPort = 3001;
 const mongoose = require("mongoose");
 
 const app = express();
@@ -37,10 +36,9 @@ mongoose.connection.on(
   console.error.bind(console, "MongoDB connection error:")
 );
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 app.use("/api", jobRouter);
-app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`));
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
 
 module.exports = app;
