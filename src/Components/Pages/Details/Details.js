@@ -1,5 +1,6 @@
 import React from 'react';
+import DetailsContainer from '../../DetailsContainer/DetailsContainer';
 
 export default function Details() {
-    return <h2>Details</h2>;
+    return <DetailsContainer />;
   }
