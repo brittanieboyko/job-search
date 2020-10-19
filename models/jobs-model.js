@@ -5,7 +5,7 @@ const Job = new Schema(
     {
         title: { type: String, required: true },
         dateApplied: { type: String, required: true },
-        completed: { type: Boolean, required: true },
+        completed: { type: Boolean, required: false },
     },
     { timestamps: true },
 )
