@@ -10,4 +10,4 @@ const Job = new Schema(
     { timestamps: true },
 )
 
-module.exports = mongoose.model('jobs', Job)
+module.exports = mongoose.model('jobTitles', Job)
