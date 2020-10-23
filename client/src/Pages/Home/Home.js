@@ -1,5 +1,5 @@
 import React from 'react';
-import JobsCardContainer from '../../JobsCardContainer/JobsCardContainer';
+import JobsCardContainer from '../../Components/JobsCardContainer/JobsCardContainer';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
