@@ -3,8 +3,8 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const apiPort = 3000;
 
-const db = require('./server/db/db')
-const apiRouter = require('./server/routes/jobRouter');
+const db = require('./db/db');
+const apiRouter = require('./routes/jobRouter');
 
 const app = express()
 
