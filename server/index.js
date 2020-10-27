@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const apiPort = 3001;
+const port = process.env.PORT || 3001;
 
 const db = require('./db/db');
 const apiRouter = require('./routes/jobRouter');
@@ -19,5 +19,5 @@ app.get('/', (req, res) => {
 })
 app.use('/api', apiRouter);
 
-app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
+app.listen(port, () => console.log(`Server running on port ${port}`))
 module.exports = app;
