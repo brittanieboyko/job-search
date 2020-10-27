@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "./JobsCard.css";
 
-export default function JobsCard() {
+const JobsCard = () => {
   return (
     <Card className="text-center custom-card">
       <Card.Body>
@@ -17,3 +17,5 @@ export default function JobsCard() {
     </Card>
   );
 }
+
+export default JobsCard;

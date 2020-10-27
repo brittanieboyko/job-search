@@ -4,7 +4,7 @@ import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import NoMatch from "./Pages/NoMatch/NoMatch";
 
-function App() {
+const App = () => {
   return (
     <Router>
         <Switch>

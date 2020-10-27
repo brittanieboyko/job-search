@@ -3,7 +3,7 @@ import JobsCardContainer from '../../Components/JobsCardContainer/JobsCardContai
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-export default function Home() {
+const Home = () => {
     return (
       <Container>
         <h2>Home</h2>
@@ -13,3 +13,5 @@ export default function Home() {
       </Container>
     );
   }
+
+  export default Home;

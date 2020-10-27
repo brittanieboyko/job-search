@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default function DetailsContainer() {
+const DetailsContainer = () => {
     return <h2>Details Container</h2>;
   }
+
+export default DetailsContainer;

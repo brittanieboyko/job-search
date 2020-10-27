@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default function ToDoContainer() {
+const ToDoContainer = () => {
     return <h2>To Do</h2>;
   }
+
+export default ToDoContainer;
