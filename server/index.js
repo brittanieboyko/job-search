@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const apiPort = 3000;
+const apiPort = 3001;
 
 const db = require('./db/db');
 const apiRouter = require('./routes/jobRouter');
