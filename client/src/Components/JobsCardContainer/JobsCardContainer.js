@@ -25,7 +25,7 @@ const JobsCardContainer = () => {
       {jobs.length ? (
         <>
           {jobs.map((job) => (
-            <JobsCard />
+            <JobsCard key={job._id} job={job} />
           ))}
         </>
       ) : (
