@@ -22,7 +22,15 @@ const JobsCardContainer = () => {
 
   return (
     <div className="card-container">
-      {jobs.length ? <JobsCard /> : <p> no jobs to display</p>}
+      {jobs.length ? (
+        <>
+          {jobs.map((job) => (
+            <JobsCard />
+          ))}
+        </>
+      ) : (
+        <p>No jobs added yet</p>
+      )}
     </div>
   );
 };
