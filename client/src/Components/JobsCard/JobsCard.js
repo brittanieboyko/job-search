@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./JobsCard.css";
 
 const JobsCard = (props) => {
-  console.log("props ->", props);
   return (
     <Card className="text-center custom-card">
       <Card.Body>
