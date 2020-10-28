@@ -14,18 +14,15 @@ const JobsCardContainer = () => {
     api
       .getAllJobs()
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data.data);
+        setJobs(res.data.data);
       })
       .catch((err) => console.log(err));
   };
 
   return (
     <div className="card-container">
-      <JobsCard />
-      <JobsCard />
-      <JobsCard />
-      <JobsCard />
-      <JobsCard />
+      {jobs.length ? <JobsCard /> : <p> no jobs to display</p>}
     </div>
   );
 };
