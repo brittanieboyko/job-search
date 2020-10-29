@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const AddModal = () => {
     const [show, setShow] = useState(false);
@@ -11,7 +11,7 @@ const AddModal = () => {
     return (
       <>
         <Button variant="primary" onClick={handleShow}>
-          Launch static backdrop modal
+          Add A Job!
         </Button>
   
         <Modal
@@ -38,4 +38,5 @@ const AddModal = () => {
     );
   }
   
+
   export default AddModal;
