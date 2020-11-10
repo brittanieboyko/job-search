@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import AddJobForm from "../AddJobForm/AddJobForm";
+import api from "../../api";
 
 const AddModal = () => {
   const [show, setShow] = useState(false);
@@ -16,9 +17,15 @@ const AddModal = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(valueObject);
-    handleClose();
+      event.preventDefault();
+      api.insertJob({
+        title: valueObject.title,
+        dateApplied: valueObject.date,
+      })
+      .then(() => handleClose())
+        // .then(() => history.push("/"))
+        .catch((err) => console.log(err));
+    
   }
 
   return (
