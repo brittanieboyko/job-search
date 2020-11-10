@@ -17,16 +17,16 @@ const AddModal = () => {
   };
 
   const handleSubmit = (event) => {
-      event.preventDefault();
-      api.insertJob({
+    event.preventDefault();
+    api
+      .insertJob({
         title: valueObject.title,
         dateApplied: valueObject.date,
       })
       .then(() => handleClose())
-        // .then(() => history.push("/"))
-        .catch((err) => console.log(err));
-    
-  }
+      // .then(() => history.push("/"))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -44,9 +44,7 @@ const AddModal = () => {
           <Modal.Title>Add a Job</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddJobForm
-            handleChange={handleChange}
-            handleSubmit={handleSubmit} />
+          <AddJobForm handleChange={handleChange} handleSubmit={handleSubmit} />
         </Modal.Body>
       </Modal>
     </>
