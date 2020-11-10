@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Form from "../Form/Form";
+import AddJobForm from "../AddJobForm/AddJobForm";
 
 const AddModal = () => {
   const [show, setShow] = useState(false);
@@ -25,7 +25,7 @@ const AddModal = () => {
           <Modal.Title>Add a Job</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form />
+          <AddJobForm />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
