@@ -19,8 +19,11 @@ const JobForm = () => {
           Date Applied:
         </Form.Label>
         <Col sm="10">
-          <Form.Control type="password" placeholder="Date" />
+          <Form.Control type="text" placeholder="Date" />
         </Col>
+      </Form.Group>
+      <Form.Group controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Application Completed" />
       </Form.Group>
     </Form>
   );
