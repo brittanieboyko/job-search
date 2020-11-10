@@ -5,9 +5,21 @@ import AddJobForm from "../AddJobForm/AddJobForm";
 
 const AddModal = () => {
   const [show, setShow] = useState(false);
+  const [valueObject, setValueObject] = useState([]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValueObject({ ...valueObject, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(valueObject);
+    handleClose();
+  }
 
   return (
     <>
@@ -25,14 +37,10 @@ const AddModal = () => {
           <Modal.Title>Add a Job</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddJobForm />
+          <AddJobForm
+            handleChange={handleChange}
+            handleSubmit={handleSubmit} />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button variant="primary">Save Job</Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
