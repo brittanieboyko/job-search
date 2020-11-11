@@ -24,7 +24,6 @@ const AddModal = () => {
         dateApplied: valueObject.date,
       })
       .then(() => handleClose())
-      // .then(() => history.push("/"))
       .catch((err) => console.log(err));
   };
 
