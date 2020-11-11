@@ -20,12 +20,19 @@ const JobsCardContainer = () => {
       .catch((err) => console.log(err));
   };
 
+  const deleteJob = (id) => {
+    api
+      .deleteJobById(id)
+      .then(() => loadJobs())
+      .catch((err) => console.log(err));
+  };
+
   return (
     <CardColumns>
       {jobs.length ? (
         <>
           {jobs.map((job) => (
-            <JobsCard key={job._id} job={job} />
+            <JobsCard key={job._id} job={job} onClick={() => deleteJob(job._id)} />
           ))}
         </>
       ) : (

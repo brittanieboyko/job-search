@@ -15,7 +15,7 @@ const JobsCard = (props) => {
         <Button variant="light">
           <Link to="/details">See details</Link>
         </Button>{" "}
-        <Button variant="light">Delete job</Button>
+        <Button variant="light" onClick={props.onClick}>Delete job</Button>
       </Card.Body>
     </Card>
   );
