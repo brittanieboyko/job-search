@@ -100,7 +100,7 @@ const getJobs = async (req, res) => {
       return res.status(400).json({ success: false, error: err });
     }
     if (!jobs.length) {
-      return res.status(404).json({ success: false, error: `Jobs not found` });
+      return res.status(404).json({ success: false, error: `no jobs found` });
     }
     return res.status(200).json({ success: true, data: jobs });
   }).catch((err) => console.log(err));
