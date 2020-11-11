@@ -6,14 +6,21 @@ import "./JobsCard.css";
 
 const JobsCard = (props) => {
   return (
-    <Card className="text-center custom-card">
+    <Card className="text-center">
+      <Card.Header>{props.job.title}</Card.Header>
       <Card.Body>
-        <Card.Title>{props.job.title}</Card.Title>
+        <Card.Text>
+          Applied on: {props.job.dateApplied}
+        </Card.Text>
+        </Card.Body>
+        <Card.Body>
         <Button variant="light">
-          <Link to="/details">See Details</Link>
+          <Link to="/details">See details</Link>
+        </Button>{" "}
+        <Button variant="light">
+          Delete job
         </Button>
       </Card.Body>
-      <Card.Footer className="text-muted">{props.job.dateApplied}</Card.Footer>
     </Card>
   );
 };
