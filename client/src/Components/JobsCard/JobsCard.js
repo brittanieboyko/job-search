@@ -9,17 +9,13 @@ const JobsCard = (props) => {
     <Card className="text-center">
       <Card.Header>{props.job.title}</Card.Header>
       <Card.Body>
-        <Card.Text>
-          Applied on: {props.job.dateApplied}
-        </Card.Text>
-        </Card.Body>
-        <Card.Body>
+        <Card.Text>Applied on: {props.job.dateApplied}</Card.Text>
+      </Card.Body>
+      <Card.Body>
         <Button variant="light">
           <Link to="/details">See details</Link>
         </Button>{" "}
-        <Button variant="light">
-          Delete job
-        </Button>
+        <Button variant="light">Delete job</Button>
       </Card.Body>
     </Card>
   );
