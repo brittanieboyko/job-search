@@ -30,7 +30,7 @@ const JobsCardContainer = () => {
 
   return (
     <>
-      <AddJobModal />
+      <AddJobModal reload={loadJobs}/>
       <CardColumns>
         {jobs.length ? (
           <>

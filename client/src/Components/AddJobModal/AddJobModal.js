@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import AddJobForm from "../AddJobForm/AddJobForm";
 import api from "../../api";
 
-const AddModal = () => {
+const AddModal = (props) => {
   const [show, setShow] = useState(false);
   const [valueObject, setValueObject] = useState([]);
 
@@ -16,6 +16,7 @@ const AddModal = () => {
     setValueObject({ ...valueObject, [name]: value });
   };
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     api
@@ -24,6 +25,7 @@ const AddModal = () => {
         dateApplied: valueObject.date,
       })
       .then(() => handleClose())
+      .then(props.reload)
       .catch((err) => console.log(err));
   };
 
