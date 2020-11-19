@@ -3,7 +3,7 @@ import CardColumns from "react-bootstrap/CardColumns";
 import JobsCard from "../JobsCard/JobsCard";
 import api from "../../api";
 import "./JobsCardContainer.css";
-import AddJobModal from '../AddJobModal/AddJobModal';
+import AddJobModal from "../AddJobModal/AddJobModal";
 
 const JobsCardContainer = () => {
   const [jobs, setJobs] = useState([]);
@@ -30,12 +30,16 @@ const JobsCardContainer = () => {
 
   return (
     <>
-      <AddJobModal reload={loadJobs}/>
+      <AddJobModal reload={loadJobs} />
       <CardColumns>
         {jobs.length ? (
           <>
             {jobs.map((job) => (
-              <JobsCard key={job._id} job={job} onClick={() => deleteJob(job._id)} />
+              <JobsCard
+                key={job._id}
+                job={job}
+                onClick={() => deleteJob(job._id)}
+              />
             ))}
           </>
         ) : (

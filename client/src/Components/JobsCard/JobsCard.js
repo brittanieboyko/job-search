@@ -13,9 +13,18 @@ const JobsCard = (props) => {
       </Card.Body>
       <Card.Body>
         <Button variant="light">
-          <Link to="/details">See details</Link>
+          <Link
+            to={{
+              pathname: "/details",
+              state: { job: props.job}
+            }}
+          >
+            See details
+          </Link>
         </Button>{" "}
-        <Button variant="light" onClick={props.onClick}>Delete job</Button>
+        <Button variant="light" onClick={props.onClick}>
+          Delete job
+        </Button>
       </Card.Body>
     </Card>
   );
