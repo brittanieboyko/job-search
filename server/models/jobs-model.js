@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const Job = new Schema(
     {
         title: { type: String, required: true },
-        dateApplied: { type: Date, required: true },
+        dateApplied: { type: String, required: true },
         completed: { type: Boolean, required: false },
     },
     { timestamps: true },
