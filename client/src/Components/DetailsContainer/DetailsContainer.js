@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 const DetailsContainer = ({ job }) => {
   return (
@@ -14,6 +15,9 @@ const DetailsContainer = ({ job }) => {
           Delete job
         </Button>
       </Card.Body>
+      <Form.Group controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Application Completed" />
+      </Form.Group>
     </Card>
   );
 };
