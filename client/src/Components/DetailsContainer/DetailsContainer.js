@@ -10,11 +10,6 @@ const DetailsContainer = ({ job }) => {
       <Card.Body>
         <Card.Text>Applied on: {job.dateApplied}</Card.Text>
       </Card.Body>
-      <Card.Body>
-        <Button variant="light" onClick={() => console.log("hay!")}>
-          Delete job
-        </Button>
-      </Card.Body>
       <Form.Group controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Application Completed" />
       </Form.Group>
