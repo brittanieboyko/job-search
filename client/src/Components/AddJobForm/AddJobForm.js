@@ -23,9 +23,6 @@ const JobForm = (props) => {
           <Form.Control type="text" placeholder="Date" name="date" onChange={props.handleChange} />
         </Col>
       </Form.Group>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Application Completed" />
-      </Form.Group>
       <Button variant="primary" type="submit" onClick={props.handleSubmit}>
         Submit
       </Button>
