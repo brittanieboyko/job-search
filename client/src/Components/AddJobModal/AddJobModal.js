@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from 'evergreen-ui';
+import { Button, PlusIcon } from 'evergreen-ui';
 import Modal from "react-bootstrap/Modal";
 import AddJobForm from "../AddJobForm/AddJobForm";
 import api from "../../api";
@@ -32,6 +32,7 @@ const AddModal = (props) => {
   return (
     <>
       <Button appearance="minimal" variant="primary" onClick={handleShow}>
+        <PlusIcon marginRight={10} />
         Add A Job!
       </Button>
 

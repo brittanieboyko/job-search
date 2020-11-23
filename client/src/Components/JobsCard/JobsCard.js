@@ -1,32 +1,36 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import { Button } from 'evergreen-ui';
+import { Button, Pane, Text, Heading } from "evergreen-ui";
 import { Link } from "react-router-dom";
 import "./JobsCard.css";
 
-const JobsCard = (props) => {
+const JobsCard = ({ job }) => {
   return (
-    <Card className="text-center">
-      <Card.Header>{props.job.title}</Card.Header>
-      <Card.Body>
-        <Card.Text>Applied on: {props.job.dateApplied}</Card.Text>
-      </Card.Body>
-      <Card.Body>
-        <Button>
-          <Link
-            to={{
-              pathname: "/details",
-              state: { job: props.job}
-            }}
-          >
-            See details
-          </Link>
-        </Button>{" "}
-        <Button onClick={props.onClick}>
-          Delete job
-        </Button>
-      </Card.Body>
-    </Card>
+    <Pane
+      elevation={1}
+      float="left"
+      width={200}
+      height={120}
+      margin={24}
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      flexDirection="column"
+      background="tint2"
+    >
+      <Heading>{job.title}</Heading>
+      <Text>Applied on: {job.dateApplied} </Text>
+      <Button>
+        <Link
+          to={{
+            pathname: "/details",
+            state: { job: job },
+          }}
+        >
+          See details
+        </Link>
+      </Button>{" "}
+      <Button onClick={job.onClick}>Delete job</Button>
+    </Pane>
   );
 };
 

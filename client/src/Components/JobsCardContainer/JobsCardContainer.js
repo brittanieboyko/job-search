@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import CardColumns from "react-bootstrap/CardColumns";
 import JobsCard from "../JobsCard/JobsCard";
 import api from "../../api";
 import "./JobsCardContainer.css";
@@ -31,7 +30,7 @@ const JobsCardContainer = () => {
   return (
     <>
       <AddJobModal reload={loadJobs} />
-      <CardColumns>
+      <main>
         {jobs.length ? (
           <>
             {jobs.map((job) => (
@@ -45,7 +44,7 @@ const JobsCardContainer = () => {
         ) : (
           <p>No jobs added yet</p>
         )}
-      </CardColumns>
+      </main>
     </>
   );
 };
