@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import { Button } from 'evergreen-ui';
 import Modal from "react-bootstrap/Modal";
 import AddJobForm from "../AddJobForm/AddJobForm";
 import api from "../../api";
@@ -31,7 +31,7 @@ const AddModal = (props) => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button appearance="minimal" variant="primary" onClick={handleShow}>
         Add A Job!
       </Button>
 

@@ -2,7 +2,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import { Button } from 'evergreen-ui';
 
 const JobForm = (props) => {
   return (
@@ -23,7 +23,7 @@ const JobForm = (props) => {
           <Form.Control type="text" placeholder="Date" name="date" onChange={props.handleChange} />
         </Col>
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={props.handleSubmit}>
+      <Button type="submit" onClick={props.handleSubmit}>
         Submit
       </Button>
     </Form>

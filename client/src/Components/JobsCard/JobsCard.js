@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { Button } from 'evergreen-ui';
 import { Link } from "react-router-dom";
 import "./JobsCard.css";
 
@@ -12,7 +12,7 @@ const JobsCard = (props) => {
         <Card.Text>Applied on: {props.job.dateApplied}</Card.Text>
       </Card.Body>
       <Card.Body>
-        <Button variant="light">
+        <Button>
           <Link
             to={{
               pathname: "/details",
@@ -22,7 +22,7 @@ const JobsCard = (props) => {
             See details
           </Link>
         </Button>{" "}
-        <Button variant="light" onClick={props.onClick}>
+        <Button onClick={props.onClick}>
           Delete job
         </Button>
       </Card.Body>
