@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
 
 const DetailsHeader = ({ job }) => {
   return (
@@ -9,9 +8,6 @@ const DetailsHeader = ({ job }) => {
       <Card.Body>
         <Card.Text>Applied on: {job.dateApplied}</Card.Text>
       </Card.Body>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Application Completed" value="Application Completed" />
-      </Form.Group>
     </Card>
   );
 };
