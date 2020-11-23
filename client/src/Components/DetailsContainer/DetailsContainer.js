@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 const DetailsContainer = ({ job }) => {
@@ -11,7 +10,7 @@ const DetailsContainer = ({ job }) => {
         <Card.Text>Applied on: {job.dateApplied}</Card.Text>
       </Card.Body>
       <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Application Completed" />
+        <Form.Check type="checkbox" label="Application Completed" value="Application Completed" />
       </Form.Group>
     </Card>
   );
