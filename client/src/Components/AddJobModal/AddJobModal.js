@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Button, PlusIcon } from 'evergreen-ui';
-import Modal from "react-bootstrap/Modal";
+import { Button, PlusIcon, Dialog, Pane } from "evergreen-ui";
 import AddJobForm from "../AddJobForm/AddJobForm";
 import api from "../../api";
 
@@ -15,7 +14,6 @@ const AddModal = (props) => {
     const { name, value } = event.target;
     setValueObject({ ...valueObject, [name]: value });
   };
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,22 +31,18 @@ const AddModal = (props) => {
     <>
       <Button appearance="minimal" variant="primary" onClick={handleShow}>
         <PlusIcon marginRight={10} />
-        Add A Job!
+        Add a New Job!
       </Button>
-
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Add a Job</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+      <Pane>
+        <Dialog
+          isShown={show}
+          title="Add A Job"
+          onCloseComplete={() => setShow(false)}
+          hasFooter={false}
+        >
           <AddJobForm handleChange={handleChange} handleSubmit={handleSubmit} />
-        </Modal.Body>
-      </Modal>
+        </Dialog>
+      </Pane>
     </>
   );
 };
