@@ -10,7 +10,7 @@ const DetailsHeader = ({ job }) => {
       justifyContent="center"
       border="default"
     >
-      <Heading>{job.title}</Heading>
+      <Heading size={900}>{job.title}</Heading>
       <Text>Applied on: {job.dateApplied}</Text>
     </Pane>
   );
