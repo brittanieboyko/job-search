@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const ToDo = new Schema(
     {
-        title: { type: String, required: true },
+        title: { type: String },
         jobID: { type: String },
         completed: { type: Boolean },
         createdAt: { type: Date, default: Date.now },
