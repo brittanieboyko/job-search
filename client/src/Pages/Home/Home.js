@@ -1,16 +1,15 @@
 import React from 'react';
 import JobsCardContainer from '../../Components/JobsCardContainer/JobsCardContainer';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import { Pane, Heading } from "evergreen-ui";
 
 const Home = () => {
     return (
-      <Container>
-        <h2>Home</h2>
-        <Row>
+      <Pane>
+        <Heading size={900}>Job Buddy</Heading>
+        <>
           <JobsCardContainer />
-        </Row>
-      </Container>
+        </>
+      </Pane>
     );
   }
 
