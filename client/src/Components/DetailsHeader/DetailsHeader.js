@@ -1,14 +1,18 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+import { Pane, Heading, Text } from "evergreen-ui";
 
 const DetailsHeader = ({ job }) => {
   return (
-    <Card className="text-center">
-      <Card.Header>{job.title}</Card.Header>
-      <Card.Body>
-        <Card.Text>Applied on: {job.dateApplied}</Card.Text>
-      </Card.Body>
-    </Card>
+    <Pane
+      height={120}
+      width={240}
+      alignItems="center"
+      justifyContent="center"
+      border="default"
+    >
+      <Heading>{job.title}</Heading>
+      <Text>Applied on: {job.dateApplied}</Text>
+    </Pane>
   );
 };
 
