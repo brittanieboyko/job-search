@@ -1,32 +1,29 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Button } from 'evergreen-ui';
+import { Button, TextInput, Pane, FormField } from "evergreen-ui";
 
 const JobForm = (props) => {
   return (
-    <Form>
-      <Form.Group as={Row} controlId="formPlaintextEmail">
-        <Form.Label column sm="2">
-          Job Title:
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control type="text" placeholder="Title" name="title" onChange={props.handleChange}/>
-        </Col> 
-      </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
-        <Form.Label column sm="2">
-          Date Applied:
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control type="text" placeholder="Date" name="date" onChange={props.handleChange} />
-        </Col>
-      </Form.Group>
+    <Pane>
+      <FormField label="Job Title">
+        <TextInput
+          type="text"
+          placeholder="Title"
+          name="title"
+          onChange={props.handleChange}
+        />
+      </FormField>
+      <FormField label="Date Applied">
+        <TextInput
+          type="text"
+          placeholder="Date"
+          name="date"
+          onChange={props.handleChange}
+        />
+      </FormField>
       <Button type="submit" onClick={props.handleSubmit}>
         Submit
       </Button>
-    </Form>
+    </Pane>
   );
 };
 
