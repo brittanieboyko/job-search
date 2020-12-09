@@ -1,9 +1,13 @@
 import React from "react";
-import { TextInput } from "evergreen-ui";
+import { TextInputField } from "evergreen-ui";
 
 const ToDoInput = () => {
   return (
-    <TextInput name="todo" placeholder="Create a new list item" />
+    <TextInputField
+    label="Enter a new todo item"
+    description="This is a description."
+    placeholder="Placeholder text"
+    />
   );
 };
 
