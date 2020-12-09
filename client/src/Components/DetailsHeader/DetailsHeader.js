@@ -1,18 +1,8 @@
 import React from "react";
-import { Pane, Heading, Text } from "evergreen-ui";
+import { Heading } from "evergreen-ui";
 
 const DetailsHeader = ({ job }) => {
-  return (
-    <Pane
-      height={120}
-      width={240}
-      alignItems="center"
-      justifyContent="center"
-      border="default"
-    >
-      <Heading size={900}>{job.title}</Heading>
-    </Pane>
-  );
+  return <Heading size={900}>{job.title}</Heading>;
 };
 
 export default DetailsHeader;
