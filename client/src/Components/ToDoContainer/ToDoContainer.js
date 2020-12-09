@@ -6,6 +6,7 @@ import api from "../../api";
 
 const ToDoContainer = () => {
   const [todos, setTodos] = useState([]);
+  const [valueObject, setValueObject] = useState([]);
 
   useEffect(() => {
     loadToDos();
@@ -24,6 +25,20 @@ const ToDoContainer = () => {
     api
       .deleteToDoById(id)
       .then(() => loadToDos())
+      .catch((err) => console.log(err));
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValueObject({ ...valueObject, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    api
+      .insertToDo({
+        title: valueObject.title,
+      })
       .catch((err) => console.log(err));
   };
   return (
