@@ -11,7 +11,6 @@ const DetailsHeader = ({ job }) => {
       border="default"
     >
       <Heading size={900}>{job.title}</Heading>
-      <Text>Applied on: {job.dateApplied}</Text>
     </Pane>
   );
 };
