@@ -52,6 +52,8 @@ const ToDoContainer = () => {
                 key={todo._id}
                 todo={todo}
                 onClick={() => deleteToDo(todo._id)}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
               />
             ))}
           </>
