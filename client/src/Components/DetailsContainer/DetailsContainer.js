@@ -1,9 +1,14 @@
 import React from "react";
+import { Pane } from "evergreen-ui";
 import DetailsHeader from "../DetailsHeader/DetailsHeader";
+import ToDoContainer from "../ToDoContainer/ToDoContainer";
 
 const DetailsContainer = ({ job }) => {
   return (
-    <DetailsHeader job={job} />
+    <Pane>
+      <DetailsHeader job={job} />
+      <ToDoContainer />
+    </Pane>
   );
 };
 
