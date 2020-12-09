@@ -1,7 +1,13 @@
-import React from 'react';
+import React from "react";
+import { Pane } from "evergreen-ui";
+import ToDoInput from "../ToDoInput/ToDoInput";
 
 const ToDoContainer = () => {
-    return <h2>To Do</h2>;
-  }
+  return (
+    <Pane>
+      <ToDoInput />
+    </Pane>
+    );
+};
 
 export default ToDoContainer;
