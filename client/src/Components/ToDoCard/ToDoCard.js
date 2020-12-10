@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Pane, Heading } from "evergreen-ui";
 
-const ToDoCard = ({ todo }) => {
+const ToDoCard = ({ todo, onClick }) => {
   return (
     <Pane
       elevation={1}
@@ -16,7 +16,7 @@ const ToDoCard = ({ todo }) => {
       background="tint2"
     >
       <Heading>{todo.title}</Heading>
-      <Button onClick={todo.onClick}>Delete todo</Button>
+      <Button onClick={onClick}>Delete todo</Button>
     </Pane>
   );
 };
