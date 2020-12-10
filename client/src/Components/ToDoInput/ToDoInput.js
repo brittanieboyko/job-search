@@ -5,7 +5,7 @@ const ToDoInput = ({ handleChange, handleSubmit }) => {
   return (
     <Pane>
       <FormField label="Add a to do item">
-        <TextInput placeholder="Links, notes, etc" onChange={handleChange} />
+        <TextInput placeholder="Links, notes, etc" name="todo" onChange={handleChange} />
         <Button type="submit" onClick={handleSubmit}>
           Submit
         </Button>

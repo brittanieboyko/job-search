@@ -31,14 +31,13 @@ const ToDoContainer = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setValueObject({ ...valueObject, [name]: value });
-    console.log(valueObject);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     api
       .insertToDo({
-        title: valueObject.title,
+        title: valueObject.todo,
       })
       .catch((err) => console.log(err));
   };
