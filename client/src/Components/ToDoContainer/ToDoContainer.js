@@ -31,6 +31,7 @@ const ToDoContainer = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setValueObject({ ...valueObject, [name]: value });
+    console.log(valueObject);
   };
 
   const handleSubmit = (event) => {
@@ -43,7 +44,10 @@ const ToDoContainer = () => {
   };
   return (
     <Pane>
-      <ToDoInput />
+      <ToDoInput
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        />
       <main>
         {todos.length ? (
           <>
@@ -52,8 +56,6 @@ const ToDoContainer = () => {
                 key={todo._id}
                 todo={todo}
                 onClick={() => deleteToDo(todo._id)}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
               />
             ))}
           </>
