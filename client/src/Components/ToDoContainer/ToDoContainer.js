@@ -39,6 +39,7 @@ const ToDoContainer = () => {
       .insertToDo({
         title: valueObject.todo,
       })
+      .then(() => loadToDos())
       .catch((err) => console.log(err));
   };
   return (
