@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Pane, Heading } from "evergreen-ui";
-import Draggable from 'react-draggable';
+import Draggable from "react-draggable";
 
-const ToDoCard = ({ todo, onClick, updatePosition }) => {
+const ToDoCard = ({ todo, onClick }) => {
   return (
     <Draggable>
       <Pane
@@ -20,7 +20,7 @@ const ToDoCard = ({ todo, onClick, updatePosition }) => {
         <Heading>{todo.title}</Heading>
         <Button onClick={onClick}>Delete todo</Button>
       </Pane>
-     </Draggable>
+    </Draggable>
   );
 };
 

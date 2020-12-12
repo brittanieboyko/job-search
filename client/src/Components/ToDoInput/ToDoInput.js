@@ -2,6 +2,7 @@ import React from "react";
 import { Pane, TextInput, Button, FormField } from "evergreen-ui";
 
 const ToDoInput = ({ handleChange, handleSubmit }) => {
+
   return (
     <Pane>
       <FormField label="Add a to do item">
