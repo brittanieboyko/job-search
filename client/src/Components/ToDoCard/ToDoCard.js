@@ -3,8 +3,9 @@ import { Button, Pane, Heading } from "evergreen-ui";
 import Draggable from "react-draggable";
 
 const ToDoCard = ({ todo, onClick }) => {
+  const nodeRef = React.useRef(null);
   return (
-    <Draggable>
+    <Draggable nodeRef={nodeRef}>
       <Pane
         elevation={1}
         float="left"
