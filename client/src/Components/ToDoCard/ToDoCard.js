@@ -10,14 +10,20 @@ const ToDoCard = ({ todo, onClick }) => {
   const handleDrag = (e, ui) => {
     const { x, y } = deltaPosition;
     setDeltaPosition({
-      x: x + ui.deltaX,
-      y: y + ui.deltaY,
+      x: x + ui.lastX,
+      y: y + ui.lastY,
     });
-    console.log(x, ui.deltaX);
+    console.log(deltaPosition);
   };
-  
+
   return (
-    <Draggable onDrag={handleDrag} nodeRef={nodeRef}>
+    <Draggable
+      nodeRef={nodeRef}
+      defaultPosition={deltaPosition}
+      onStop={(e, data) => {
+        handleDrag(e, data);
+      }}
+    >
       <Pane
         elevation={1}
         float="left"
