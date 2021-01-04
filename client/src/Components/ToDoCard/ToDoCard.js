@@ -5,6 +5,7 @@ import Draggable from "react-draggable";
 const ToDoCard = ({ todo, onClick }) => {
   const nodeRef = React.useRef(null);
   const [deltaPosition, setDeltaPosition] = useState({ x: 0, y: 0 });
+  const [activeDrags, setActiveDrags] = useState(0);
 
   const handleDrag = (e, ui) => {
     const { x, y } = deltaPosition;
