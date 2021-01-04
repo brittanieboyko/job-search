@@ -16,7 +16,7 @@ const ToDoCard = ({ todo, onClick }) => {
   };
   
   return (
-    <Draggable onDrag={handleDrag}>
+    <Draggable onDrag={handleDrag} nodeRef={nodeRef}>
       <Pane
         elevation={1}
         float="left"
@@ -28,6 +28,7 @@ const ToDoCard = ({ todo, onClick }) => {
         alignItems="center"
         flexDirection="column"
         background="tint2"
+        ref={nodeRef}
       >
         <Heading>{todo.title}</Heading>
         <Button onClick={onClick}>Delete todo</Button>
