@@ -4,27 +4,34 @@ import Draggable from "react-draggable";
 
 const ToDoCard = ({ todo, onClick }) => {
   const nodeRef = React.useRef(null);
-  const [deltaPosition, setDeltaPosition] = useState({ x: 0, y: 0 });
+  const [storedPosition, setStoredPosition] = useState(
+    JSON.parse(localStorage.getItem("deltaPosition") || JSON.stringify({x: 0, y: 0}))
+  );
+  
+  useEffect(() => {
+    setStoredPosition(storedPosition)
+    console.log("get", storedPosition);
+  }, [storedPosition])
 
   useEffect(() => {
-    localStorage.setItem("deltaPosition", JSON.stringify(deltaPosition));
-  }, [deltaPosition]);
+    localStorage.setItem("deltaPosition", JSON.stringify(storedPosition));
+    console.log("set", storedPosition);
+  }, [storedPosition]);
 
-  const handleDrag = (e, ui) => {
-    const { x, y } = deltaPosition;
-    setDeltaPosition({
-      x: x + ui.lastX,
-      y: y + ui.lastY,
+  const handleStop = (e, ui) => {
+    setStoredPosition({
+      x: ui.lastX,
+      y: ui.lastY,
     });
-    console.log(deltaPosition);
+    console.log("handle stop", storedPosition);
   };
 
   return (
     <Draggable
       nodeRef={nodeRef}
-      defaultPosition={deltaPosition}
+      defaultPosition={storedPosition}
       onStop={(e, data) => {
-        handleDrag(e, data);
+        handleStop(e, data);
       }}
     >
       <Pane
@@ -32,7 +39,6 @@ const ToDoCard = ({ todo, onClick }) => {
         float="left"
         width={200}
         height={120}
-        margin={24}
         display="flex"
         justifyContent="center"
         alignItems="center"
