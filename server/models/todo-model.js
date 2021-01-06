@@ -5,7 +5,6 @@ const ToDo = new Schema(
     {
         title: { type: String },
         jobID: { type: String },
-        deltaPosition: { type: Object },
         completed: { type: Boolean },
         createdAt: { type: Date, default: Date.now },
         updatedAt: { type: Date, default: Date.now },
