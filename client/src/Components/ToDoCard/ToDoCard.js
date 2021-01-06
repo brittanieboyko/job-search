@@ -3,9 +3,10 @@ import { Button, Pane, Heading } from "evergreen-ui";
 import Draggable from "react-draggable";
 
 const ToDoCard = ({ todo, onClick }) => {
+  console.log(todo._id);
   const nodeRef = React.useRef(null);
   const [storedPosition, setStoredPosition] = useState(
-    JSON.parse(localStorage.getItem("deltaPosition") || JSON.stringify({x: 0, y: 0}))
+    JSON.parse(localStorage.getItem(`${todo._id}`) || JSON.stringify({x: 0, y: 0}))
   );
   
   useEffect(() => {
@@ -14,7 +15,7 @@ const ToDoCard = ({ todo, onClick }) => {
   }, [storedPosition])
 
   useEffect(() => {
-    localStorage.setItem("deltaPosition", JSON.stringify(storedPosition));
+    localStorage.setItem(`${todo._id}`, JSON.stringify(storedPosition));
     console.log("set", storedPosition);
   }, [storedPosition]);
 
