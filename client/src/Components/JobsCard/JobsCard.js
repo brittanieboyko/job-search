@@ -3,7 +3,7 @@ import { Button, Pane, Text, Heading } from "evergreen-ui";
 import { Link } from "react-router-dom";
 import "./JobsCard.css";
 
-const JobsCard = ({ job }) => {
+const JobsCard = ({ job, onClick }) => {
   return (
     <Pane
       elevation={1}
@@ -29,7 +29,7 @@ const JobsCard = ({ job }) => {
           See details
         </Link>
       </Button>{" "}
-      <Button onClick={job.onClick}>Delete job</Button>
+      <Button onClick={onClick}>Delete job</Button>
     </Pane>
   );
 };
