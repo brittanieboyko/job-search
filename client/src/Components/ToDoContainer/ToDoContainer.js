@@ -56,7 +56,7 @@ const ToDoContainer = () => {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         keyPress={keyPress}
-        />
+      />
       <main>
         {todos.length ? (
           <>
@@ -73,7 +73,7 @@ const ToDoContainer = () => {
         )}
       </main>
     </Pane>
-    );
+  );
 };
 
 export default ToDoContainer;
