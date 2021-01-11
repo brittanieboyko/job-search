@@ -42,11 +42,20 @@ const ToDoContainer = () => {
       .then(() => loadToDos())
       .catch((err) => console.log(err));
   };
+
+  const keyPress = (event) => {
+    var code = event.keyCode || event.which;
+    if (code === 13) {
+      handleSubmit(event);
+    }
+  };
+
   return (
     <Pane>
       <ToDoInput
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        keyPress={keyPress}
         />
       <main>
         {todos.length ? (
