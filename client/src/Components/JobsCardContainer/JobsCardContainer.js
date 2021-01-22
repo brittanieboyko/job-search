@@ -23,6 +23,7 @@ const JobsCardContainer = () => {
   const deleteJob = (id) => {
     api
       .deleteJobById(id)
+      .then(() => setJobs(jobs.filter((job) => job._id !== id)))
       .then(() => loadJobs())
       .catch((err) => console.log(err));
   };
