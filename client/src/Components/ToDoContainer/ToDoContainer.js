@@ -24,6 +24,7 @@ const ToDoContainer = () => {
   const deleteToDo = (id) => {
     api
       .deleteToDoById(id)
+      .then(() => setTodos(todos.filter((todo) => todo._id !== id)))
       .then(() => loadToDos())
       .catch((err) => console.log(err));
   };
