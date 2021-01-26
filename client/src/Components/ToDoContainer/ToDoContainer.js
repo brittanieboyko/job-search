@@ -6,7 +6,9 @@ import api from "../../api";
 
 const ToDoContainer = () => {
   const [todos, setTodos] = useState([]);
-  const [valueObject, setValueObject] = useState([]);
+  const [valueObject, setValueObject] = useState({
+    todo: ""
+  });
 
   useEffect(() => {
     loadToDos();
@@ -30,8 +32,8 @@ const ToDoContainer = () => {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setValueObject({ ...valueObject, [name]: value });
+    const { value } = event.target;
+    setValueObject({ ...valueObject, todo: value });
   };
 
   const handleSubmit = (event) => {
@@ -41,6 +43,7 @@ const ToDoContainer = () => {
         title: valueObject.todo,
       })
       .then(() => loadToDos())
+      .then(() => setValueObject({ todo: "" }))
       .catch((err) => console.log(err));
   };
 
@@ -57,6 +60,7 @@ const ToDoContainer = () => {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         keyPress={keyPress}
+        value={valueObject.todo}
       />
       <main>
         {todos.length ? (
