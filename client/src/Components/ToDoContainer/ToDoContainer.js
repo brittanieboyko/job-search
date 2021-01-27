@@ -4,7 +4,7 @@ import ToDoInput from "../ToDoInput/ToDoInput";
 import ToDoCard from "../ToDoCard/ToDoCard";
 import api from "../../api";
 
-const ToDoContainer = () => {
+const ToDoContainer = ({ job }) => {
   const [todos, setTodos] = useState([]);
   const [valueObject, setValueObject] = useState({
     todo: ""
@@ -12,6 +12,7 @@ const ToDoContainer = () => {
 
   useEffect(() => {
     loadToDos();
+    console.log(job);
   }, []);
 
   const loadToDos = () => {
@@ -41,6 +42,7 @@ const ToDoContainer = () => {
     api
       .insertToDo({
         title: valueObject.todo,
+        jobID: 123,
       })
       .then(() => loadToDos())
       .then(() => setValueObject({ todo: "" }))
