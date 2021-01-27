@@ -7,7 +7,7 @@ const DetailsContainer = ({ job }) => {
   return (
     <Pane>
       <DetailsHeader job={job} />
-      <ToDoContainer />
+      <ToDoContainer job={job} />
     </Pane>
   );
 };
