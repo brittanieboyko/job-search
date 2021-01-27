@@ -7,7 +7,7 @@ import api from "../../api";
 const ToDoContainer = ({ job }) => {
   const [todos, setTodos] = useState([]);
   const [valueObject, setValueObject] = useState({
-    todo: ""
+    todo: "",
   });
 
   useEffect(() => {
@@ -66,16 +66,20 @@ const ToDoContainer = ({ job }) => {
       <main>
         {todos.length ? (
           <>
-            {todos.map((todo) => (
-              <ToDoCard
-                key={todo._id}
-                todo={todo}
-                onClick={() => deleteToDo(todo._id)}
-              />
-            ))}
+            {todos.map((todo) =>
+              todo.jobID === job._id ? (
+                <ToDoCard
+                  key={todo._id}
+                  todo={todo}
+                  onClick={() => deleteToDo(todo._id)}
+                />
+              ) : (
+                <p key={todo._id}></p>
+              )
+            )}
           </>
         ) : (
-          <p>No items added yet</p>
+          <p></p>
         )}
       </main>
     </Pane>
