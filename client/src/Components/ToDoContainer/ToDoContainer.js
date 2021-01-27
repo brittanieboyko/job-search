@@ -12,7 +12,6 @@ const ToDoContainer = ({ job }) => {
 
   useEffect(() => {
     loadToDos();
-    console.log(job);
   }, []);
 
   const loadToDos = () => {
@@ -42,7 +41,7 @@ const ToDoContainer = ({ job }) => {
     api
       .insertToDo({
         title: valueObject.todo,
-        jobID: 123,
+        jobID: job._id,
       })
       .then(() => loadToDos())
       .then(() => setValueObject({ todo: "" }))
