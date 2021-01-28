@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const Job = new Schema(
     {
+        companyName: { type: String, required: true },
         title: { type: String, required: true },
         dateDue: { type: String, required: false },
         salary: { type: Number, required: false },

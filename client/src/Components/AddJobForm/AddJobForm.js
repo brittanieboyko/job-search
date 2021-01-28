@@ -4,6 +4,14 @@ import { Button, TextInput, Pane, FormField } from "evergreen-ui";
 const JobForm = (props) => {
   return (
     <Pane>
+      <FormField label="Company">
+        <TextInput
+          type="text"
+          placeholder="Company Name"
+          name="company"
+          onChange={props.handleChange}
+        />
+      </FormField>
       <FormField label="Job Title">
         <TextInput
           type="text"
@@ -12,7 +20,7 @@ const JobForm = (props) => {
           onChange={props.handleChange}
         />
       </FormField>
-      <FormField label="Date Due">
+      <FormField label="Due Date">
         <TextInput
           type="text"
           placeholder="Date"
