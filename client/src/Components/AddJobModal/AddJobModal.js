@@ -19,8 +19,10 @@ const AddModal = (props) => {
     event.preventDefault();
     api
       .insertJob({
+        companyName: valueObject.companyName,
         title: valueObject.title,
-        dateApplied: valueObject.date,
+        dueDate: valueObject.dueDate,
+        salary: valueObject.salary,
       })
       .then(() => handleClose())
       .then(props.reload)

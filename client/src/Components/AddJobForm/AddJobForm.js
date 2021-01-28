@@ -8,7 +8,7 @@ const JobForm = (props) => {
         <TextInput
           type="text"
           placeholder="Company Name"
-          name="company"
+          name="companyName"
           onChange={props.handleChange}
         />
       </FormField>
@@ -24,7 +24,7 @@ const JobForm = (props) => {
         <TextInput
           type="text"
           placeholder="Date"
-          name="date"
+          name="dueDate"
           onChange={props.handleChange}
         />
       </FormField>
