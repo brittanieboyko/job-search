@@ -12,11 +12,19 @@ const JobForm = (props) => {
           onChange={props.handleChange}
         />
       </FormField>
-      <FormField label="Date Applied">
+      <FormField label="Date Due">
         <TextInput
           type="text"
           placeholder="Date"
           name="date"
+          onChange={props.handleChange}
+        />
+      </FormField>
+      <FormField label="Salary Estimation">
+        <TextInput
+          type="text"
+          placeholder="Salary"
+          name="salary"
           onChange={props.handleChange}
         />
       </FormField>
