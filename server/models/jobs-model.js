@@ -4,9 +4,9 @@ const Schema = mongoose.Schema
 const Job = new Schema(
     {
         title: { type: String, required: true },
-        dateApplied: { type: String, required: true },
+        dateDue: { type: String, required: false },
+        dateApplied: { type: String, required: false },
         salary: { type: Number, required: false },
-        completed: { type: Boolean, required: false },
         createdAt: { type: Date, default: Date.now },
         updatedAt: { type: Date, default: Date.now }
     },
