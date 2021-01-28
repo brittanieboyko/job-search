@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./JobsCard.css";
 
 const JobsCard = ({ job, onClick }) => {
+  console.log(job);
   return (
     <Pane
       elevation={1}
@@ -17,8 +18,8 @@ const JobsCard = ({ job, onClick }) => {
       flexDirection="column"
       background="tint2"
     >
-      <Heading>{job.title}</Heading>
-      <Text>Applied on: {job.dateApplied} </Text>
+      <Heading>{job.title}, {job.companyName}</Heading>
+      <Text>Complete by: {job.dueDate} </Text>
       <Button>
         <Link
           to={{
