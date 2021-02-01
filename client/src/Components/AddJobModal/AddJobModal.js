@@ -3,7 +3,7 @@ import { Button, PlusIcon, Dialog, Pane } from "evergreen-ui";
 import AddJobForm from "../AddJobForm/AddJobForm";
 import api from "../../api";
 
-const AddModal = (props) => {
+const AddModal = ({ reload }) => {
   const [show, setShow] = useState(false);
   const [valueObject, setValueObject] = useState([]);
 
@@ -25,7 +25,7 @@ const AddModal = (props) => {
         salary: valueObject.salary,
       })
       .then(() => handleClose())
-      .then(props.reload)
+      .then(reload)
       .catch((err) => console.log(err));
   };
 
