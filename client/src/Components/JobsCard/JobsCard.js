@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./JobsCard.css";
 
 const JobsCard = ({ job, onClick }) => {
-  console.log(job);
   return (
     <Pane
       elevation={1}
