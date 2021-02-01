@@ -7,6 +7,7 @@ const JobForm = (props) => {
       <FormField label="Company">
         <TextInput
           type="text"
+          required
           placeholder="Company Name"
           name="companyName"
           onChange={props.handleChange}
@@ -15,6 +16,7 @@ const JobForm = (props) => {
       <FormField label="Job Title">
         <TextInput
           type="text"
+          required
           placeholder="Title"
           name="title"
           onChange={props.handleChange}
@@ -22,15 +24,15 @@ const JobForm = (props) => {
       </FormField>
       <FormField label="Due Date">
         <TextInput
-          type="text"
-          placeholder="Date"
+          type="date"
+          required
           name="dueDate"
           onChange={props.handleChange}
         />
       </FormField>
       <FormField label="Salary Estimation">
         <TextInput
-          type="text"
+          type="number"
           placeholder="Salary"
           name="salary"
           onChange={props.handleChange}
