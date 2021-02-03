@@ -3,7 +3,7 @@ import { Pane, Tab, TabNavigation } from "evergreen-ui";
 
 const NavBar = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [tabs, setTabs] = useState(["jobs", "profile", "calendar"]);
+  const [tabs, setTabs] = useState(["Job Buddy", "profile", "calendar"]);
 
   return (
     <Pane height={40}>
@@ -16,7 +16,7 @@ const NavBar = () => {
             isSelected={index === selectedIndex}
             aria-controls={`panel-${tab}`}
             is="a"
-            href={`/${tab}`}
+            href={index === 0 ? `/` : `/${tab}`}
           >
             {tab}
           </Tab>
