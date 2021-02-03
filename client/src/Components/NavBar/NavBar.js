@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Pane, Tab, Paragraph, TabNavigation } from "evergreen-ui";
+import { Pane, Tab, TabNavigation } from "evergreen-ui";
 
 const NavBar = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [tabs, setTabs] = useState(["Profile", "Jobs", "Calendar"]);
 
   return (
-    <Pane height={120}>
+    <Pane height={40}>
       <TabNavigation marginBottom={16} flexBasis={240} marginRight={24}>
         {tabs.map((tab, index) => (
           <Tab
