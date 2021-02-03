@@ -4,7 +4,7 @@ import { Pane, Tablist, Tab, Paragraph } from "evergreen-ui";
 const NavBar = () => {
 
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [tabs, setTabs] = useState(['Traits', 'Event History', 'Identities']);
+    const [tabs, setTabs] = useState(['Profile', 'Jobs', 'Calendar']);
 
     return (
     <Pane height={120}>
