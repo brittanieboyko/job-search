@@ -14,6 +14,12 @@ const App = () => {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/profile">
+            <Home />
+          </Route>
+          <Route exact path="/calendar">
+            <Home />
+          </Route>
           <Route path="*">
             <NoMatch />
           </Route>
