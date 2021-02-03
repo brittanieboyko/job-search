@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pane, Tablist, Tab, Paragraph } from "evergreen-ui";
+import { Pane, Tablist, Tab, Paragraph, TabNavigation } from "evergreen-ui";
 
 const NavBar = () => {
 
@@ -8,7 +8,7 @@ const NavBar = () => {
 
     return (
     <Pane height={120}>
-      <Tablist marginBottom={16} flexBasis={240} marginRight={24}>
+      <TabNavigation marginBottom={16} flexBasis={240} marginRight={24}>
         {tabs.map((tab, index) => (
           <Tab
             key={tab}
@@ -20,7 +20,7 @@ const NavBar = () => {
             {tab}
           </Tab>
         ))}
-      </Tablist>
+      </TabNavigation>
       <Pane padding={16} background="tint1" flex="1">
         {tabs.map((tab, index) => (
           <Pane
