@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pane, Tablist, Tab, Paragraph, TabNavigation } from "evergreen-ui";
+import { Pane, Tab, Paragraph, TabNavigation } from "evergreen-ui";
 
 const NavBar = () => {
 
