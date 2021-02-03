@@ -3,7 +3,7 @@ import { Pane, Tab, TabNavigation } from "evergreen-ui";
 
 const NavBar = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [tabs, setTabs] = useState(["Profile", "Jobs", "Calendar"]);
+  const [tabs, setTabs] = useState(["jobs", "profile", "calendar"]);
 
   return (
     <Pane height={40}>
@@ -16,26 +16,12 @@ const NavBar = () => {
             isSelected={index === selectedIndex}
             aria-controls={`panel-${tab}`}
             is="a"
-            href="#"
+            href={`/${tab}`}
           >
             {tab}
           </Tab>
         ))}
       </TabNavigation>
-      {/* <Pane padding={16} background="tint1" flex="1">
-        {tabs.map((tab, index) => (
-          <Pane
-            key={tab}
-            id={`panel-${tab}`}
-            role="tabpanel"
-            aria-labelledby={tab}
-            aria-hidden={index !== selectedIndex}
-            display={index === selectedIndex ? "block" : "none"}
-          >
-            <Paragraph>Panel {tab}</Paragraph>
-          </Pane>
-        ))}
-      </Pane> */}
     </Pane>
   );
 };
