@@ -6,8 +6,8 @@ import { Pane, Heading } from "evergreen-ui";
 const Home = () => {
     return (
       <Pane>
-        <NavBar />
         <Heading size={900}>Job Buddy</Heading>
+        <NavBar />
         <>
           <JobsCardContainer />
         </>
