@@ -15,12 +15,14 @@ const NavBar = () => {
             onSelect={() => setSelectedIndex(index)}
             isSelected={index === selectedIndex}
             aria-controls={`panel-${tab}`}
+            is="a"
+            href="#"
           >
             {tab}
           </Tab>
         ))}
       </TabNavigation>
-      <Pane padding={16} background="tint1" flex="1">
+      {/* <Pane padding={16} background="tint1" flex="1">
         {tabs.map((tab, index) => (
           <Pane
             key={tab}
@@ -33,7 +35,7 @@ const NavBar = () => {
             <Paragraph>Panel {tab}</Paragraph>
           </Pane>
         ))}
-      </Pane>
+      </Pane> */}
     </Pane>
   );
 };
