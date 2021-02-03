@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import NoMatch from "./Pages/NoMatch/NoMatch";
+import Profile from "./Pages/Profile/Profile";
+import Calendar from "./Pages/Calendar/Calendar";
 
 const App = () => {
   return (
@@ -15,10 +17,10 @@ const App = () => {
             <Home />
           </Route>
           <Route exact path="/profile">
-            <Home />
+            <Profile />
           </Route>
           <Route exact path="/calendar">
-            <Home />
+            <Calendar />
           </Route>
           <Route path="*">
             <NoMatch />
