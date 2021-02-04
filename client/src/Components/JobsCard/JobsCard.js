@@ -8,7 +8,7 @@ const JobsCard = ({ job, onClick }) => {
     <Pane
       elevation={1}
       float="left"
-      width={200}
+      width={500}
       height={120}
       margin={24}
       display="flex"
