@@ -16,6 +16,8 @@ const Calendar = () => {
       scope: SCOPES
     })
     gapi.client.load("calendar", "v3", () => {console.log("bam!")})
+
+    gapi.auth2.getAuthInstance().signIn()
   })
   }
 
