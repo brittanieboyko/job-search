@@ -8,7 +8,6 @@ const Calendar = () => {
   const gapi = window.gapi;
 
   const handleClick = () => {
-    console.log(process.env.REACT_APP_CLIENT_ID);
     gapi.load("client:auth2", () => {
     gapi.client.init({
       apiKey: process.env.REACT_APP_API_KEY,
