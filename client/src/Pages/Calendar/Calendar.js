@@ -8,8 +8,18 @@ const Calendar = () => {
   const gapi = window.gapi;
 
   const handleClick = () => {
-    console.log("hi");
+    console.log(process.env.REACT_APP_CLIENT_ID);
+    gapi.load("client:auth2", () => {
+    gapi.client.init({
+      apiKey: process.env.REACT_APP_API_KEY,
+      clientId: process.env.REACT_APP_CLIENT_ID,
+      discoveryDocs: DISCOVERY_DOCS,
+      scope: SCOPES
+    })
+    gapi.client.load("calendar", "v3", () => {console.log("bam!")})
+  })
   }
+
 
   return (
     <Pane>
