@@ -18,6 +18,14 @@ const Calendar = () => {
     gapi.client.load("calendar", "v3", () => {console.log("bam!")})
 
     gapi.auth2.getAuthInstance().signIn()
+      .then(() =>  {
+        
+        const event = {
+          'summary': 'Interview with Google',
+          'location': '5000 Google Lane Mountain View, CA',
+          'description': '3 hour coding interview',
+        }
+      })
   })
   }
 
