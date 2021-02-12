@@ -25,6 +25,14 @@ const Calendar = () => {
           'location': '5000 Google Lane Mountain View, CA',
           'description': '3 hour coding interview',
         }
+
+        const request = gapi.client.calendar.events.insert( {
+          'calendarId': 'primary',
+          'resource': event,
+        })
+        request.execute(event => {
+          window.open(event.htmlLink);
+        })
       })
   })
   }
