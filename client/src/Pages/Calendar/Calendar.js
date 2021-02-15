@@ -51,7 +51,7 @@ const Calendar = () => {
             resource: event,
           });
           request.execute(event => {
-            console.log('Event created: ' + JSON.stringify(event));
+            window.open(event.htmlLink);
           });
         });
     });
