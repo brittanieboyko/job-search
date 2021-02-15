@@ -6,7 +6,7 @@ const Calendar = () => {
   const DISCOVERY_DOCS = [
     "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
   ];
-  const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+  const SCOPES = "https://www.googleapis.com/auth/calendar";
   const gapi = window.gapi;
 
   const handleClick = () => {
@@ -50,8 +50,8 @@ const Calendar = () => {
             calendarId: "primary",
             resource: event,
           });
-          request.execute((event) => {
-            window.open(event.htmlLink);
+          request.execute(event => {
+            console.log('Event created: ' + JSON.stringify(event));
           });
         });
     });
