@@ -26,9 +26,24 @@ const Calendar = () => {
         .signIn()
         .then(() => {
           const event = {
-            summary: "Interview with Google",
-            location: "5000 Google Lane Mountain View, CA",
-            description: "3 hour coding interview",
+            'summary': 'Google I/O 2015',
+            'location': '800 Howard St., San Francisco, CA 94103',
+            'description': 'A chance to hear more about Google\'s developer products.',
+            'start': {
+              'dateTime': '2021-02-16T09:00:00-07:00',
+              'timeZone': 'America/Los_Angeles'
+            },
+            'end': {
+              'dateTime': '2021-02-16T17:00:00-07:00',
+              'timeZone': 'America/Los_Angeles'
+            },
+            'reminders': {
+              'useDefault': false,
+              'overrides': [
+                {'method': 'email', 'minutes': 24 * 60},
+                {'method': 'popup', 'minutes': 10}
+              ]
+            }
           };
 
           const request = gapi.client.calendar.events.insert({
