@@ -4,7 +4,7 @@ import { Pane, TextInput, Button, FormField } from "evergreen-ui";
 const ToDoInput = ({ handleChange, handleSubmit, keyPress, value }) => {
   return (
     <Pane>
-      <FormField label="Add a to do item">
+      <FormField label="Add a note or reminder">
         <TextInput
           placeholder="Links, notes, etc"
           value={value}
