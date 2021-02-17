@@ -2,21 +2,17 @@ import React, { useState } from "react";
 import { Button, PlusIcon, Dialog, Pane } from "evergreen-ui";
 import CreateEventForm from "../CreateEventForm/CreateEventForm";
 
-const AddModal = () => {
+const AddModal = ( {handleChange, handleSubmit} ) => {
   const [show, setShow] = useState(false);
   const [valueObject, setValueObject] = useState([]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setValueObject({ ...valueObject, [name]: value });
-  };
 
-  const handleSubmit = (event) => {
+  const onSubmit = (event) => {
       event.preventDefault();
-      console.log(valueObject.eventSummary, valueObject.location, valueObject.startTime);
+      handleSubmit();
       handleClose();
   };
 
@@ -33,7 +29,7 @@ const AddModal = () => {
           onCloseComplete={() => setShow(false)}
           hasFooter={false}
         >
-          <CreateEventForm handleChange={handleChange} handleSubmit={handleSubmit} />
+          <CreateEventForm handleChange={handleChange} handleSubmit={onSubmit} />
         </Dialog>
       </Pane>
     </>

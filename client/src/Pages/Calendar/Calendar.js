@@ -16,8 +16,7 @@ const Calendar = () => {
     setValueObject({ ...valueObject, [name]: value });
   };
 
-  const handleSubmit = (event) => {
-      event.preventDefault();
+  const handleSubmit = () => {
       console.log(valueObject.eventSummary, valueObject.location, valueObject.startTime);
   };
 
