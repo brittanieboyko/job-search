@@ -4,7 +4,6 @@ import CreateEventForm from "../CreateEventForm/CreateEventForm";
 
 const AddModal = ( {handleChange, handleSubmit} ) => {
   const [show, setShow] = useState(false);
-  const [valueObject, setValueObject] = useState([]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
