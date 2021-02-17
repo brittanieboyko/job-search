@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
-import { Pane, Heading, Button } from "evergreen-ui";
+import { Pane, Heading } from "evergreen-ui";
 
 const Calendar = () => {
   const DISCOVERY_DOCS = [
