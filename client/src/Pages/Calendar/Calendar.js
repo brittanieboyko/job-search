@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../../Components/NavBar/NavBar";
+import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
 import { Pane, Heading, Button } from "evergreen-ui";
 
 const Calendar = () => {
@@ -28,7 +29,6 @@ const Calendar = () => {
           const event = {
             'summary': 'Google I/O 2015',
             'location': '800 Howard St., San Francisco, CA 94103',
-            'description': 'A chance to hear more about Google\'s developer products.',
             'start': {
               'dateTime': '2021-02-16T09:00:00-07:00',
               'timeZone': 'America/Los_Angeles'
@@ -36,13 +36,6 @@ const Calendar = () => {
             'end': {
               'dateTime': '2021-02-16T17:00:00-07:00',
               'timeZone': 'America/Los_Angeles'
-            },
-            'reminders': {
-              'useDefault': false,
-              'overrides': [
-                {'method': 'email', 'minutes': 24 * 60},
-                {'method': 'popup', 'minutes': 10}
-              ]
             }
           };
 
@@ -61,7 +54,7 @@ const Calendar = () => {
     <Pane>
       <Heading size={900}>Calendar Page</Heading>
       <NavBar />
-      <Button onClick={handleClick}>Add Event</Button>
+      <CreateEventModal />
     </Pane>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Pane } from "evergreen-ui";
 import ToDoInput from "../ToDoInput/ToDoInput";
 import ToDoCard from "../ToDoCard/ToDoCard";
-import CreateEventModal from "../CreateEventModal/CreateEventModal";
 import api from "../../api";
 
 const ToDoContainer = ({ job }) => {
@@ -64,7 +63,6 @@ const ToDoContainer = ({ job }) => {
         keyPress={keyPress}
         value={valueObject.todo}
       />
-      <CreateEventModal />
       <main>
         {todos.length ? (
           <>
