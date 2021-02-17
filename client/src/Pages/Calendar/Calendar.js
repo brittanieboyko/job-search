@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
 import { Pane, Heading } from "evergreen-ui";
@@ -9,6 +9,17 @@ const Calendar = () => {
   ];
   const SCOPES = "https://www.googleapis.com/auth/calendar";
   const gapi = window.gapi;
+  const [valueObject, setValueObject] = useState([]);
+  
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValueObject({ ...valueObject, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(valueObject.eventSummary, valueObject.location, valueObject.startTime);
+  };
 
   const handleClick = () => {
     gapi.load("client:auth2", () => {
@@ -54,7 +65,7 @@ const Calendar = () => {
     <Pane>
       <Heading size={900}>Calendar Page</Heading>
       <NavBar />
-      <CreateEventModal />
+      <CreateEventModal handleChange={handleChange} handleSubmit={handleSubmit} />
     </Pane>
   );
 };
