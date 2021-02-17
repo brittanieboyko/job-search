@@ -15,8 +15,9 @@ const AddModal = () => {
   };
 
   const handleSubmit = (event) => {
-    console.log("form submitted");
-    handleClose();
+      event.preventDefault();
+      console.log(valueObject.eventSummary, valueObject.location, valueObject.startTime);
+      handleClose();
   };
 
   return (
