@@ -15,6 +15,7 @@ const Calendar = () => {
     const { name, value } = event.target;
     setValueObject({ ...valueObject, [name]: value });
   };
+  
 
   const handleSubmit = () => {
     console.log(valueObject.startTime, valueObject.endTime);
@@ -33,17 +34,18 @@ const Calendar = () => {
         .getAuthInstance()
         .signIn()
         .then(() => {
+          let startTimeAsDate = new Date(valueObject.startTime + "Z");
+          let endTimeAsDate = new Date(valueObject.endTime + "Z");
           const event = {
             'summary': `${valueObject.eventSummary}`,
             'location': `${valueObject.location}`,
             'start': {
-              'dateTime': '2015-05-28T09:00:00-07:00'
+              'dateTime': `${startTimeAsDate.toISOString()}`
             },
             'end': {
-              'dateTime': '2021-02-16T17:00:00-07:00'
+              'dateTime': `${endTimeAsDate.toISOString()}`
             }
           };
-          console.log(JSON.stringify(event))
 
           const request = gapi.client.calendar.events.insert({
             calendarId: "primary",
