@@ -17,10 +17,7 @@ const Calendar = () => {
   };
 
   const handleSubmit = () => {
-      console.log(valueObject.eventSummary, valueObject.location, valueObject.startTime);
-  };
-
-  const handleClick = () => {
+    console.log(valueObject.startTime, valueObject.endTime);
     gapi.load("client:auth2", () => {
       gapi.client.init({
         apiKey: process.env.REACT_APP_API_KEY,
@@ -40,12 +37,10 @@ const Calendar = () => {
             'summary': `${valueObject.eventSummary}`,
             'location': `${valueObject.location}`,
             'start': {
-              'dateTime': '2015-05-28T09:00:00-07:00',
-              'timeZone': 'America/Los_Angeles'
+              'dateTime': '2015-05-28T09:00:00-07:00'
             },
             'end': {
-              'dateTime': '2021-02-16T17:00:00-07:00',
-              'timeZone': 'America/New_York'
+              'dateTime': '2021-02-16T17:00:00-07:00'
             }
           };
           console.log(JSON.stringify(event))
@@ -66,7 +61,7 @@ const Calendar = () => {
     <Pane>
       <Heading size={900}>Calendar Page</Heading>
       <NavBar />
-      <CreateEventModal handleChange={handleChange} handleSubmit={handleClick} />
+      <CreateEventModal handleChange={handleChange} handleSubmit={handleSubmit} />
     </Pane>
   );
 };
