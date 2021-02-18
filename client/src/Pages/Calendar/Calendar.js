@@ -37,17 +37,18 @@ const Calendar = () => {
         .signIn()
         .then(() => {
           const event = {
-            'summary': 'Google I/O 2015',
-            'location': '800 Howard St., San Francisco, CA 94103',
+            'summary': `${valueObject.eventSummary}`,
+            'location': `${valueObject.location}`,
             'start': {
-              'dateTime': '2021-02-16T09:00:00-07:00',
+              'dateTime': '2015-05-28T09:00:00-07:00',
               'timeZone': 'America/Los_Angeles'
             },
             'end': {
               'dateTime': '2021-02-16T17:00:00-07:00',
-              'timeZone': 'America/Los_Angeles'
+              'timeZone': 'America/New_York'
             }
           };
+          console.log(JSON.stringify(event))
 
           const request = gapi.client.calendar.events.insert({
             calendarId: "primary",
@@ -56,7 +57,8 @@ const Calendar = () => {
           request.execute(event => {
             window.open(event.htmlLink);
           });
-        });
+        })
+        .then(() => console.log("done?"))
     });
   };
 
@@ -64,7 +66,7 @@ const Calendar = () => {
     <Pane>
       <Heading size={900}>Calendar Page</Heading>
       <NavBar />
-      <CreateEventModal handleChange={handleChange} handleSubmit={handleSubmit} />
+      <CreateEventModal handleChange={handleChange} handleSubmit={handleClick} />
     </Pane>
   );
 };
