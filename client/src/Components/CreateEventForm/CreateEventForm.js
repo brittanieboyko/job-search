@@ -24,9 +24,17 @@ const CreateEventForm = (props) => {
       </FormField>
       <FormField label="Start Time">
         <TextInput
-          type="time"
+          type="datetime-local"
           required
           name="startTime"
+          onChange={props.handleChange}
+        />
+      </FormField>
+      <FormField label="End Time">
+        <TextInput
+          type="datetime-local"
+          required
+          name="endTime"
           onChange={props.handleChange}
         />
       </FormField>
