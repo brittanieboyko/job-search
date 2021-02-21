@@ -17,7 +17,7 @@ const CreateEventForm = (props) => {
         <TextInput
           type="text"
           required
-          placeholder="Location of interview"
+          placeholder="Event Location"
           name="location"
           onChange={props.handleChange}
         />
