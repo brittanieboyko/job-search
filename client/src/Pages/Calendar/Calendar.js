@@ -10,12 +10,11 @@ const Calendar = () => {
   const SCOPES = "https://www.googleapis.com/auth/calendar";
   const gapi = window.gapi;
   const [valueObject, setValueObject] = useState([]);
-  
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setValueObject({ ...valueObject, [name]: value });
   };
-  
 
   const handleSubmit = () => {
     console.log(valueObject.startTime, valueObject.endTime);
@@ -26,9 +25,7 @@ const Calendar = () => {
         discoveryDocs: DISCOVERY_DOCS,
         scope: SCOPES,
       });
-      gapi.client.load("calendar", "v3", () => {
-        console.log("bam!");
-      });
+      gapi.client.load("calendar", "v3", () => {});
 
       gapi.auth2
         .getAuthInstance()
@@ -37,25 +34,24 @@ const Calendar = () => {
           let startTimeAsDate = new Date(valueObject.startTime + "Z");
           let endTimeAsDate = new Date(valueObject.endTime + "Z");
           const event = {
-            'summary': `${valueObject.eventSummary}`,
-            'location': `${valueObject.location}`,
-            'start': {
-              'dateTime': `${startTimeAsDate.toISOString()}`
+            summary: `${valueObject.eventSummary}`,
+            location: `${valueObject.location}`,
+            start: {
+              dateTime: `${startTimeAsDate.toISOString()}`,
             },
-            'end': {
-              'dateTime': `${endTimeAsDate.toISOString()}`
-            }
+            end: {
+              dateTime: `${endTimeAsDate.toISOString()}`,
+            },
           };
 
           const request = gapi.client.calendar.events.insert({
             calendarId: "primary",
             resource: event,
           });
-          request.execute(event => {
+          request.execute((event) => {
             window.open(event.htmlLink);
           });
-        })
-        .then(() => console.log("done?"))
+        });
     });
   };
 
@@ -63,7 +59,10 @@ const Calendar = () => {
     <Pane>
       <Heading size={900}>Calendar Page</Heading>
       <NavBar />
-      <CreateEventModal handleChange={handleChange} handleSubmit={handleSubmit} />
+      <CreateEventModal
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
     </Pane>
   );
 };
