@@ -17,7 +17,6 @@ const Calendar = () => {
   };
 
   const handleSubmit = () => {
-    console.log(valueObject.startTime, valueObject.endTime);
     gapi.load("client:auth2", () => {
       gapi.client.init({
         apiKey: process.env.REACT_APP_API_KEY,
