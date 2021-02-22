@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, PlusIcon, Dialog, Pane } from "evergreen-ui";
+import { Button, PlusIcon, Dialog, Pane, AddIcon } from "evergreen-ui";
 import AddJobForm from "../AddJobForm/AddJobForm";
 import api from "../../api";
 
@@ -31,9 +31,14 @@ const AddModal = ({ reload }) => {
 
   return (
     <>
-      <Button appearance="minimal" variant="primary" onClick={handleShow}>
-        <PlusIcon marginRight={10} />
-        Add a New Job!
+      <Button
+        height={24}
+        marginLeft={16}
+        appearance="minimal"
+        iconBefore={AddIcon}
+        onClick={handleShow}
+      >
+        Add A Job
       </Button>
       <Pane>
         <Dialog
