@@ -31,16 +31,20 @@ const Calendar = () => {
         .getAuthInstance()
         .signIn()
         .then(() => {
-          let startTimeAsDate = new Date(valueObject.startTime + "Z");
-          let endTimeAsDate = new Date(valueObject.endTime + "Z");
+          let startTimeAsDate = new Date(valueObject.startTime);
+          let endTimeAsDate = new Date(valueObject.endTime);
+          let usersTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
           const event = {
             summary: `${valueObject.eventSummary}`,
             location: `${valueObject.location}`,
             start: {
               dateTime: `${startTimeAsDate.toISOString()}`,
+              timeZone: usersTimeZone,
             },
             end: {
               dateTime: `${endTimeAsDate.toISOString()}`,
+              timeZone: usersTimeZone,
             },
           };
 
