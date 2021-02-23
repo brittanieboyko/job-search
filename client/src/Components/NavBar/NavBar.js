@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pane, TabNavigation, SidebarTab } from "evergreen-ui";
+import { Pane, TabNavigation, SidebarTab, majorScale } from "evergreen-ui";
 
 const NavBar = () => {
   const [tabs, setTabs] = useState(["Job Buddy", "Profile", "Calendar"]);
@@ -11,7 +11,7 @@ const NavBar = () => {
 
   return (
     <Pane display="flex" height={240}>
-      <TabNavigation marginBottom={16} flexBasis={240} marginRight={24}>
+      <TabNavigation marginBottom={16} flexBasis={240} marginRight={24} width={majorScale(1)}>
         {tabs.map((tab, index) => (
           <SidebarTab
             key={tab}

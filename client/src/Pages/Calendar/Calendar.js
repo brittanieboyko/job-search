@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavBar from "../../Components/NavBar/NavBar";
 import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
 import { Pane, Heading } from "evergreen-ui";
 
@@ -61,7 +60,6 @@ const Calendar = () => {
   return (
     <Pane>
       <Heading size={900}>Calendar Page</Heading>
-      <NavBar />
       <CreateEventModal
         handleChange={handleChange}
         handleSubmit={handleSubmit}
