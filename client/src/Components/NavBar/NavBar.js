@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Pane, TabNavigation, SidebarTab, majorScale } from "evergreen-ui";
 
 const NavBar = () => {
-  const [tabs, setTabs] = useState(["Job Buddy", "Goals", "Calendar"]);
+  const [tabs, setTabs] = useState(["Jobs", "Goals", "Calendar"]);
   const [selectedIndex, setSelectedIndex] = useState([
-    "Job Buddy",
+    "Jobs",
     "Goals",
     "Calendar",
   ]);
