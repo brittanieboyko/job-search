@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pane, Tab, TabNavigation, SidebarTab, Paragraph } from "evergreen-ui";
+import { Pane, TabNavigation, SidebarTab } from "evergreen-ui";
 
 const NavBar = () => {
   const [tabs, setTabs] = useState(["Job Buddy", "Profile", "Calendar"]);
