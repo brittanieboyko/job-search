@@ -15,18 +15,13 @@ const NavBar = () => {
             onSelect={() => setSelectedIndex(index)}
             isSelected={index === selectedIndex}
             aria-controls={`panel-${tab}`}
-            key={tab}
             is="a"
             href={index === 0 ? `/` : `/${tab}`}
-            isSelected={index === 0}
           >
             {tab}
           </SidebarTab>
         ))}
       </TabNavigation>
-      <Pane padding={16} background="tint1" flex="1">
-
-      </Pane>
     </Pane>
   )}
 
