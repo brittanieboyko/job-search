@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import NoMatch from "./Pages/NoMatch/NoMatch";
-import Profile from "./Pages/Profile/Profile";
+import Goals from "./Pages/Goals/Goals";
 import Calendar from "./Pages/Calendar/Calendar";
 import NavBar from "./Components/NavBar/NavBar";
 import { Heading } from "evergreen-ui";
@@ -20,8 +20,8 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/profile">
-          <Profile />
+        <Route exact path="/goals">
+          <Goals />
         </Route>
         <Route exact path="/calendar">
           <Calendar />
