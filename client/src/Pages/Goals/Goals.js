@@ -1,8 +1,8 @@
 import React from "react";
-import { Heading } from "evergreen-ui";
+import { Pane } from "evergreen-ui";
 
 const Goals = () => {
-  return <Heading size={900}>Goals Page</Heading>;
+  return <Pane>Goals Page</Pane>;
 };
 
 export default Goals;

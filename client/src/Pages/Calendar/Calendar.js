@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
-import { Pane, Heading } from "evergreen-ui";
+import { Pane } from "evergreen-ui";
 
 const Calendar = () => {
   const DISCOVERY_DOCS = [
@@ -59,7 +59,6 @@ const Calendar = () => {
 
   return (
     <Pane>
-      <Heading size={900}>Calendar Page</Heading>
       <CreateEventModal
         handleChange={handleChange}
         handleSubmit={handleSubmit}
