@@ -8,19 +8,12 @@ const NavBar = () => {
     "Goals",
     "Calendar",
   ]);
-//   <div
-//   style={{
-//     padding: "10px",
-//     width: "40%",
-//     background: "#f0f0f0"
-//   }}
-// >
+
   return (
     <Pane display="flex" height={240}>
-      <TabNavigation marginBottom={16} flexBasis={240} marginRight={24} padding={5} width={200} background={"blue"}>
+      <TabNavigation marginBottom={16} flexBasis={240} marginRight={24} padding={5} width={200}>
         {tabs.map((tab, index) => (
           <SidebarTab
-          background={"red"}
             key={tab}
             id={tab}
             onSelect={() => setSelectedIndex(index)}
