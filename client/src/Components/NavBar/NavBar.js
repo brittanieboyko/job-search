@@ -11,7 +11,7 @@ const NavBar = () => {
 
   return (
     <Pane display="flex" height={240}>
-      <TabNavigation marginBottom={16} flexBasis={240} marginRight={24} padding={5} width={200}>
+      <TabNavigation marginBottom={16} flexBasis={240} padding={5} width={200}>
         {tabs.map((tab, index) => (
           <SidebarTab
             key={tab}
