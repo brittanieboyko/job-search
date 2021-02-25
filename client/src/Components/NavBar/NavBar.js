@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import { Pane, TabNavigation, SidebarTab, majorScale } from "evergreen-ui";
 
 const NavBar = () => {
-  const [tabs, setTabs] = useState(["Jobs", "Goals", "Calendar"]);
-  const [selectedIndex, setSelectedIndex] = useState([
-    "Jobs",
-    "Goals",
-    "Calendar",
+  const [selectedIndex, setSelectedIndex] = useState();
+  const [tabs] = useState([
+    {
+      path: "/",
+      name: "Jobs",
+    },
+    {
+      path: "/goals",
+      name: "Goals",
+    },
+    {
+      path: "/calendar",
+      name: "Calendar",
+    }
   ]);
 
   return (
@@ -14,15 +23,15 @@ const NavBar = () => {
       <TabNavigation marginBottom={16} flexBasis={240} padding={5} width={200}>
         {tabs.map((tab, index) => (
           <SidebarTab
-            key={tab}
-            id={tab}
+            key={index}
+            id={tab.name}
             onSelect={() => setSelectedIndex(index)}
             isSelected={index === selectedIndex}
-            aria-controls={`panel-${tab}`}
+            aria-controls={`panel-${tab.name}`}
             is="a"
-            href={index === 0 ? `/` : `/${tab}`}
+            href={tab.path}
           >
-            {tab}
+            {tab.name}
           </SidebarTab>
         ))}
       </TabNavigation>
