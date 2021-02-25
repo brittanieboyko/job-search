@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Pane, TabNavigation, SidebarTab, majorScale } from "evergreen-ui";
+import { Pane, TabNavigation, SidebarTab } from "evergreen-ui";
 
 const NavBar = () => {
-  const [selectedIndex, setSelectedIndex] = useState();
   const [tabs] = useState([
     {
       path: "/",
@@ -23,10 +22,8 @@ const NavBar = () => {
       <TabNavigation marginBottom={16} flexBasis={240} padding={5} width={200}>
         {tabs.map((tab, index) => (
           <SidebarTab
-            key={index}
+            key={tab.name}
             id={tab.name}
-            onSelect={() => setSelectedIndex(index)}
-            isSelected={index === selectedIndex}
             aria-controls={`panel-${tab.name}`}
             is="a"
             href={tab.path}
