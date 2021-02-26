@@ -7,14 +7,14 @@ const JobsCard = ({ job, onClick }) => {
   return (
     <Pane
       elevation={1}
-      float="left"
-      width={500}
+      float="center"
+      width={550}
       height={120}
       margin={24}
       display="flex"
       justifyContent="center"
       alignItems="center"
-      flexDirection="column"
+      flexDirection="row"
       background="tint2"
     >
       <Heading>{job.title}, {job.companyName}</Heading>

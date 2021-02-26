@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import JobsCard from "../JobsCard/JobsCard";
-import api from "../../api";
-import "./JobsCardContainer.css";
 import AddJobModal from "../AddJobModal/AddJobModal";
+import api from "../../api";
+import { Pane } from "evergreen-ui";
+import "./JobsCardContainer.css";
 
 const JobsCardContainer = () => {
   const [jobs, setJobs] = useState([]);
@@ -29,7 +30,7 @@ const JobsCardContainer = () => {
   };
 
   return (
-    <>
+    <Pane marginLeft={50}>
       <AddJobModal reload={loadJobs} />
       <main>
         {jobs.length ? (
@@ -43,10 +44,10 @@ const JobsCardContainer = () => {
             ))}
           </>
         ) : (
-          <p>No jobs added yet</p>
+          <p>No jobs added yet. Click the Add Job Button to get started!</p>
         )}
       </main>
-    </>
+    </Pane>
   );
 };
 
