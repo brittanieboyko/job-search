@@ -14,7 +14,7 @@ const NavBar = () => {
     {
       path: "/calendar",
       name: "Calendar",
-    }
+    },
   ]);
 
   return (
