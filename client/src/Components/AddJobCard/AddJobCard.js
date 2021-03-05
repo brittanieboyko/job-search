@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Text, Pane, AddIcon, Heading } from "evergreen-ui";
+import { Button, Pane, AddIcon } from "evergreen-ui";
 
 const AddJobCard = ({ onClick }) => {
   return (
