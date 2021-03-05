@@ -5,7 +5,7 @@ const Job = new Schema(
     {
         companyName: { type: String, required: true },
         title: { type: String, required: true },
-        dueDate: { type: String, required: false },
+        dateApplied: { type: String, required: false },
         salary: { type: String, required: false },
         createdAt: { type: Date, default: Date.now },
         updatedAt: { type: Date, default: Date.now }
