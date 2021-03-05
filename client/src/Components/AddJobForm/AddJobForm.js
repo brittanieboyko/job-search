@@ -22,11 +22,11 @@ const JobForm = (props) => {
           onChange={props.handleChange}
         />
       </FormField>
-      <FormField label="Due Date">
+      <FormField label="Date Applied">
         <TextInput
           type="date"
           required
-          name="dueDate"
+          name="dateApplied"
           onChange={props.handleChange}
         />
       </FormField>

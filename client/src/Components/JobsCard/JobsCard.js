@@ -18,7 +18,7 @@ const JobsCard = ({ job, onClick }) => {
       background="tint2"
     >
       <Heading>{job.title}, {job.companyName}</Heading>
-      <Text>Complete by: {job.dueDate} </Text>
+      <Text>Complete by: {job.dateApplied} </Text>
       <Button>
         <Link
           to={{

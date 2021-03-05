@@ -21,7 +21,7 @@ const AddModal = ({ reload }) => {
       .insertJob({
         companyName: valueObject.companyName,
         title: valueObject.title,
-        dueDate: valueObject.dueDate,
+        dateApplied: valueObject.dateApplied,
         salary: valueObject.salary,
       })
       .then(() => handleClose())
