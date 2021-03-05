@@ -15,8 +15,6 @@ const AddJobCard = ({ onClick }) => {
       flexDirection="row"
       background="tint2"
     >
-      <Heading>this is heading text</Heading>
-      <Text>this is text text</Text>
       <Button
         height={24}
         marginLeft={16}
