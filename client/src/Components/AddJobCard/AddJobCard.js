@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Text, Pane, AddIcon, Heading } from "evergreen-ui";
 
-const AddJobCard = ({ reload }) => {
+const AddJobCard = ({ onClick }) => {
   return (
     <Pane
       elevation={1}
@@ -22,7 +22,7 @@ const AddJobCard = ({ reload }) => {
         marginLeft={16}
         appearance="minimal"
         iconBefore={AddIcon}
-        onClick={console.log("clicky click")}
+        onClick={onClick}
       >
         Add A Job
       </Button>

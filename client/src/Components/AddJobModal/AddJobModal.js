@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Dialog, Pane, AddIcon } from "evergreen-ui";
 import AddJobForm from "../AddJobForm/AddJobForm";
+import AddJobCard from "../AddJobCard/AddJobCard";
 import api from "../../api";
 
 const AddModal = ({ reload }) => {
@@ -40,6 +41,7 @@ const AddModal = ({ reload }) => {
       >
         Add A Job
       </Button>
+      <AddJobCard onClick={handleShow}/>
       <Pane>
         <Dialog
           isShown={show}
