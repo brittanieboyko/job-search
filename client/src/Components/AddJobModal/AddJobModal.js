@@ -32,15 +32,6 @@ const AddModal = ({ reload }) => {
 
   return (
     <>
-      <Button
-        height={24}
-        marginLeft={16}
-        appearance="minimal"
-        iconBefore={AddIcon}
-        onClick={handleShow}
-      >
-        Add A Job
-      </Button>
       <AddJobCard onClick={handleShow}/>
       <Pane>
         <Dialog

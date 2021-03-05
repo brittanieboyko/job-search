@@ -44,7 +44,7 @@ const JobsCardContainer = () => {
             ))}
           </>
         ) : (
-          <p>No jobs added yet. Click the Add Job Button to get started!</p>
+          <p></p>
         )}
       </main>
     </Pane>
