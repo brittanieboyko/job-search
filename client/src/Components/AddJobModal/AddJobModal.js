@@ -23,7 +23,6 @@ const AddModal = ({ reload }) => {
         companyName: valueObject.companyName,
         title: valueObject.title,
         dateApplied: valueObject.dateApplied,
-        salary: valueObject.salary,
       })
       .then(() => handleClose())
       .then(reload)

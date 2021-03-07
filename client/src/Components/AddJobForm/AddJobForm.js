@@ -30,14 +30,6 @@ const JobForm = (props) => {
           onChange={props.handleChange}
         />
       </FormField>
-      <FormField label="Estimated Salary">
-        <TextInput
-          type="number"
-          placeholder="Salary"
-          name="salary"
-          onChange={props.handleChange}
-        />
-      </FormField>
       <Button type="submit" onClick={props.handleSubmit}>
         Submit
       </Button>
