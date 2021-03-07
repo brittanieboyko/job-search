@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Pane, AddIcon } from "evergreen-ui";
+import { Button, Pane, PlusIcon } from "evergreen-ui";
 
 const AddJobCard = ({ onClick }) => {
   return (
@@ -19,9 +19,10 @@ const AddJobCard = ({ onClick }) => {
         height={24}
         marginLeft={16}
         appearance="minimal"
-        iconBefore={AddIcon}
         onClick={onClick}
+        fontSize={24}
       >
+        <PlusIcon size={30} />
         Add A Job
       </Button>
     </Pane>
