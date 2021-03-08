@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Dialog, Pane, AddIcon } from "evergreen-ui";
+import { Dialog, Pane } from "evergreen-ui";
 import AddJobForm from "../AddJobForm/AddJobForm";
 import AddJobCard from "../AddJobCard/AddJobCard";
 import api from "../../api";
