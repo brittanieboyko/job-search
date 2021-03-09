@@ -17,9 +17,9 @@ const JobsCard = ({ job, onClick }) => {
       flexDirection="row"
       background="tint2"
     >
-      <Heading>{job.title}, {job.companyName}</Heading>
-      <Text>{job.dateApplied} </Text>
-      <Button>
+      <Heading margin={12}>{job.title}, {job.companyName}</Heading>
+      <Text marginRight={12}>{job.dateApplied} </Text>
+      <Button marginRight={12}>
         <Link
           to={{
             pathname: "/details",
@@ -28,7 +28,7 @@ const JobsCard = ({ job, onClick }) => {
         >
           See details
         </Link>
-      </Button>{" "}
+      </Button>
       <Button onClick={onClick}>Delete job</Button>
     </Pane>
   );
