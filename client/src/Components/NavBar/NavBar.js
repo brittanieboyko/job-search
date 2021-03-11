@@ -20,8 +20,9 @@ const NavBar = () => {
   return (
     <Pane display="flex" height={240}>
       <TabNavigation marginBottom={16} flexBasis={240} padding={5} width={200}>
-        {tabs.map((tab, index) => (
+        {tabs.map((tab) => (
           <SidebarTab
+            fontFamily={"'Space Grotesk', sans-serif"}
             key={tab.name}
             id={tab.name}
             aria-controls={`panel-${tab.name}`}

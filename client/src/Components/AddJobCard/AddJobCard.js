@@ -21,8 +21,9 @@ const AddJobCard = ({ onClick }) => {
         appearance="minimal"
         onClick={onClick}
         fontSize={24}
+        fontFamily={"'Space Grotesk', sans-serif"}
       >
-        <PlusIcon size={30} />
+        <i className="fas fa-plus fa-3x"></i>
         Add A Job
       </Button>
     </Pane>
