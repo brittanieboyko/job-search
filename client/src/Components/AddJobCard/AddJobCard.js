@@ -1,5 +1,8 @@
 import React from "react";
+import "./AddJobCard.css";
 import { Button, Pane } from "evergreen-ui";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const AddJobCard = ({ onClick }) => {
   return (
@@ -23,7 +26,7 @@ const AddJobCard = ({ onClick }) => {
         fontSize={24}
         fontFamily={"'Space Grotesk', sans-serif"}
       >
-        <i className="fas fa-plus fa-3x"></i>
+        <FontAwesomeIcon className="add-icon" icon={faPlus} />
         Add A Job
       </Button>
     </Pane>
