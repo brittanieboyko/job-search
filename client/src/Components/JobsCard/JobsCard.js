@@ -21,6 +21,7 @@ const JobsCard = ({ job, onClick }) => {
       <Text marginRight={12}>{job.dateApplied} </Text>
       <Button marginRight={12}>
         <Link
+          className="details"
           to={{
             pathname: "/details",
             state: { job: job },
