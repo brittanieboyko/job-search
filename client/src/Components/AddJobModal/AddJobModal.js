@@ -31,7 +31,7 @@ const AddModal = ({ reload }) => {
 
   return (
     <>
-      <AddJobCard onClick={handleShow}/>
+      <AddJobCard onClick={handleShow} />
       <Pane>
         <Dialog
           isShown={show}

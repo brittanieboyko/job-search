@@ -12,7 +12,9 @@ const App = () => {
   return (
     <Pane>
       <Router>
-        <Heading size={900} fontFamily={"'Space Grotesk', sans-serif"}>Job Buddy</Heading>
+        <Heading size={900} fontFamily={"'Space Grotesk', sans-serif"}>
+          Job Buddy
+        </Heading>
         <Pane display="flex">
           <NavBar />
           <Switch>
