@@ -9,7 +9,6 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "evergreen-ui": "^5.1.2",
-    "randomcolor": "^0.6.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.13.1",
