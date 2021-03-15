@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
 import { Pane } from "evergreen-ui";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
 
-const Calendar = () => {
+require('react-big-calendar/lib/css/react-big-calendar.css');
+
+
+const MyCalendar = () => {
+  const localizer = momentLocalizer(moment);
   const DISCOVERY_DOCS = [
     "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
   ];
@@ -63,8 +69,15 @@ const Calendar = () => {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
+      <Calendar
+        localizer={localizer}
+        events={[]}
+        startAccessor="start"
+        endAccessor="end"
+        style={{ height: 500 }}
+      />
     </Pane>
   );
 };
 
-export default Calendar;
+export default MyCalendar;

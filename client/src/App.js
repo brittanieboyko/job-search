@@ -4,7 +4,7 @@ import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import NoMatch from "./Pages/NoMatch/NoMatch";
 import Goals from "./Pages/Goals/Goals";
-import Calendar from "./Pages/Calendar/Calendar";
+import MyCalendar from "./Pages/Calendar/Calendar";
 import NavBar from "./Components/NavBar/NavBar";
 import { Heading, Pane } from "evergreen-ui";
 
@@ -28,7 +28,7 @@ const App = () => {
               <Goals />
             </Route>
             <Route exact path="/calendar">
-              <Calendar />
+              <MyCalendar />
             </Route>
             <Route path="*">
               <NoMatch />
