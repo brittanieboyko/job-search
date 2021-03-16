@@ -4,8 +4,7 @@ import { Pane } from "evergreen-ui";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 
-require('react-big-calendar/lib/css/react-big-calendar.css');
-
+require("react-big-calendar/lib/css/react-big-calendar.css");
 
 const MyCalendar = () => {
   const localizer = momentLocalizer(moment);
@@ -15,6 +14,7 @@ const MyCalendar = () => {
   const SCOPES = "https://www.googleapis.com/auth/calendar";
   const gapi = window.gapi;
   const [valueObject, setValueObject] = useState([]);
+  // const [events, setEvents] = useState([]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -59,6 +59,19 @@ const MyCalendar = () => {
           request.execute((event) => {
             window.open(event.htmlLink);
           });
+          gapi.client.calendar.events
+            .list({
+              calendarId: "primary",
+              timeMin: new Date().toISOString(),
+              showDeleted: false,
+              singleEvents: true,
+              maxResults: 10,
+              orderBy: "startTime",
+            })
+            .then((response) => {
+              const events = response.result.items;
+              console.log("EVENTS: ", events);
+            });
         });
     });
   };
