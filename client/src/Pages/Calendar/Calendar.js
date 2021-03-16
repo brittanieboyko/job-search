@@ -65,17 +65,17 @@ const MyCalendar = () => {
         const events = response.result.items;
 
         if (events.length > 0) {
-          // setCalendarEvents(events);
-          console.log("response events",events);
           events.map((event) => {
-            console.log("event", event);
             const formattedEvent = {
               start: event.start.date || event.start.dateTime,
               end: event.end.date || event.end.dateTime,
               title: event.summary,
-            }
-            setCalendarEvents(calendarEvents => [...calendarEvents, formattedEvent]);
-          })
+            };
+            setCalendarEvents((calendarEvents) => [
+              ...calendarEvents,
+              formattedEvent,
+            ]);
+          });
         } else {
           console.log("No upcoming events found.");
         }
