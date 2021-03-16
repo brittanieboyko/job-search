@@ -54,7 +54,7 @@ const MyCalendar = () => {
   function listUpcomingEvents() {
     gapi.client.calendar.events
       .list({
-        calendarId: "primary",
+        calendarId: "bib88vd60u8glvl7r69lgenig4@group.calendar.google.com",
         timeMin: new Date().toISOString(),
         showDeleted: false,
         singleEvents: true,
@@ -98,7 +98,7 @@ const MyCalendar = () => {
       };
 
       const request = gapi.client.calendar.events.insert({
-        calendarId: "primary",
+        calendarId: "bib88vd60u8glvl7r69lgenig4@group.calendar.google.com",
         resource: event,
       });
       request.execute((event) => {
