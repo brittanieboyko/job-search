@@ -14,7 +14,7 @@ const MyCalendar = () => {
   const SCOPES = "https://www.googleapis.com/auth/calendar";
   const gapi = window.gapi;
   const [valueObject, setValueObject] = useState([]);
-  const [events, setEvents] = useState([]);
+  const [calendarEvents, setCalendarEvents] = useState([]);
 
   useEffect(() => {
     handleClientLoad();
@@ -61,12 +61,21 @@ const MyCalendar = () => {
         maxResults: 10,
         orderBy: "startTime",
       })
-      .then(function (response) {
-        var events = response.result.items;
+      .then((response) => {
+        const events = response.result.items;
 
         if (events.length > 0) {
-          setEvents(events);
-          console.log(events);
+          // setCalendarEvents(events);
+          console.log("response events",events);
+          events.map((event) => {
+            console.log("event", event);
+            const formattedEvent = {
+              start: event.start.date || event.start.dateTime,
+              end: event.end.date || event.end.dateTime,
+              title: event.summary,
+            }
+            setCalendarEvents(calendarEvents => [...calendarEvents, formattedEvent]);
+          })
         } else {
           console.log("No upcoming events found.");
         }
@@ -115,7 +124,7 @@ const MyCalendar = () => {
       />
       <Calendar
         localizer={localizer}
-        events={events}
+        events={calendarEvents}
         startAccessor="start"
         endAccessor="end"
         style={{ height: 500 }}
