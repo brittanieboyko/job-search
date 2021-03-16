@@ -14,11 +14,11 @@ const MyCalendar = () => {
   const SCOPES = "https://www.googleapis.com/auth/calendar";
   const gapi = window.gapi;
   const [valueObject, setValueObject] = useState([]);
-  // const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     handleClientLoad();
-  });
+  }, []);
 
   const handleClientLoad = () => {
     gapi.load("client:auth2", initClient);
@@ -51,7 +51,6 @@ const MyCalendar = () => {
     if (isSignedIn) {
       // authorizeButton.style.display = 'none';
       // signoutButton.style.display = 'block';
-      console.log("signed in");
       listUpcomingEvents();
     } else {
       // authorizeButton.style.display = 'block';
@@ -82,6 +81,7 @@ const MyCalendar = () => {
         var events = response.result.items;
 
         if (events.length > 0) {
+          setEvents(events);
           console.log(events);
         } else {
           console.log("No upcoming events found.");
@@ -95,58 +95,35 @@ const MyCalendar = () => {
   };
 
   const handleSubmit = () => {
-    gapi.load("client:auth2", () => {
-      gapi.client.init({
-        apiKey: process.env.REACT_APP_API_KEY,
-        clientId: process.env.REACT_APP_CLIENT_ID,
-        discoveryDocs: DISCOVERY_DOCS,
-        scope: SCOPES,
-      });
-      gapi.client.load("calendar", "v3", () => {});
+    gapi.auth2
+      .getAuthInstance()
+      .signIn()
+      .then(() => {
+        let startTimeAsDate = new Date(valueObject.startTime);
+        let endTimeAsDate = new Date(valueObject.endTime);
+        let usersTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-      gapi.auth2
-        .getAuthInstance()
-        .signIn()
-        .then(() => {
-          let startTimeAsDate = new Date(valueObject.startTime);
-          let endTimeAsDate = new Date(valueObject.endTime);
-          let usersTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const event = {
+          summary: `${valueObject.eventSummary}`,
+          location: `${valueObject.location}`,
+          start: {
+            dateTime: `${startTimeAsDate.toISOString()}`,
+            timeZone: usersTimeZone,
+          },
+          end: {
+            dateTime: `${endTimeAsDate.toISOString()}`,
+            timeZone: usersTimeZone,
+          },
+        };
 
-          const event = {
-            summary: `${valueObject.eventSummary}`,
-            location: `${valueObject.location}`,
-            start: {
-              dateTime: `${startTimeAsDate.toISOString()}`,
-              timeZone: usersTimeZone,
-            },
-            end: {
-              dateTime: `${endTimeAsDate.toISOString()}`,
-              timeZone: usersTimeZone,
-            },
-          };
-
-          const request = gapi.client.calendar.events.insert({
-            calendarId: "primary",
-            resource: event,
-          });
-          request.execute((event) => {
-            window.open(event.htmlLink);
-          });
-          gapi.client.calendar.events
-            .list({
-              calendarId: "primary",
-              timeMin: new Date().toISOString(),
-              showDeleted: false,
-              singleEvents: true,
-              maxResults: 10,
-              orderBy: "startTime",
-            })
-            .then((response) => {
-              const events = response.result.items;
-              console.log("EVENTS: ", events);
-            });
+        const request = gapi.client.calendar.events.insert({
+          calendarId: "primary",
+          resource: event,
         });
-    });
+        request.execute((event) => {
+          window.open(event.htmlLink);
+        });
+      });
   };
 
   return (
@@ -157,7 +134,7 @@ const MyCalendar = () => {
       />
       <Calendar
         localizer={localizer}
-        events={[]}
+        events={events}
         startAccessor="start"
         endAccessor="end"
         style={{ height: 500 }}
