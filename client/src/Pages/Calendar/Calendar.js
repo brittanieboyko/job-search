@@ -34,12 +34,8 @@ const MyCalendar = () => {
       })
       .then(
         function () {
-          // Listen for sign-in state changes.
           gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-          // Handle the initial sign-in state.
           updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-          // authorizeButton.onclick = handleAuthClick;
-          // signoutButton.onclick = handleSignoutClick;
         },
         function (error) {
           console.log(JSON.stringify(error, null, 2));
@@ -49,23 +45,11 @@ const MyCalendar = () => {
 
   const updateSigninStatus = (isSignedIn) => {
     if (isSignedIn) {
-      // authorizeButton.style.display = 'none';
-      // signoutButton.style.display = 'block';
       listUpcomingEvents();
     } else {
-      // authorizeButton.style.display = 'block';
-      // signoutButton.style.display = 'none';
-      console.log("not signed in");
+      console.log("user not signed in");
     }
   };
-
-  // function handleSignoutClick(event) {
-  //   gapi.auth2.getAuthInstance().signOut();
-  // }
-
-  // function handleAuthClick(event) {
-  //   gapi.auth2.getAuthInstance().signIn();
-  // }
 
   function listUpcomingEvents() {
     gapi.client.calendar.events
@@ -95,35 +79,32 @@ const MyCalendar = () => {
   };
 
   const handleSubmit = () => {
-    gapi.auth2
-      .getAuthInstance()
-      .signIn()
-      .then(() => {
-        let startTimeAsDate = new Date(valueObject.startTime);
-        let endTimeAsDate = new Date(valueObject.endTime);
-        let usersTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
+      let startTimeAsDate = new Date(valueObject.startTime);
+      let endTimeAsDate = new Date(valueObject.endTime);
+      let usersTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-        const event = {
-          summary: `${valueObject.eventSummary}`,
-          location: `${valueObject.location}`,
-          start: {
-            dateTime: `${startTimeAsDate.toISOString()}`,
-            timeZone: usersTimeZone,
-          },
-          end: {
-            dateTime: `${endTimeAsDate.toISOString()}`,
-            timeZone: usersTimeZone,
-          },
-        };
+      const event = {
+        summary: `${valueObject.eventSummary}`,
+        location: `${valueObject.location}`,
+        start: {
+          dateTime: `${startTimeAsDate.toISOString()}`,
+          timeZone: usersTimeZone,
+        },
+        end: {
+          dateTime: `${endTimeAsDate.toISOString()}`,
+          timeZone: usersTimeZone,
+        },
+      };
 
-        const request = gapi.client.calendar.events.insert({
-          calendarId: "primary",
-          resource: event,
-        });
-        request.execute((event) => {
-          window.open(event.htmlLink);
-        });
+      const request = gapi.client.calendar.events.insert({
+        calendarId: "primary",
+        resource: event,
       });
+      request.execute((event) => {
+        window.open(event.htmlLink);
+      });
+    }
   };
 
   return (
