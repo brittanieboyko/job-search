@@ -127,7 +127,7 @@ const MyCalendar = () => {
         events={calendarEvents}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{ height: 600, width: 800}}
       />
     </Pane>
   );
