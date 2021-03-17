@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
 import { Pane } from "evergreen-ui";
-import { Calendar, momentLocalizer } from "react-big-calendar";
+import { Calendar, momentLocalizer, Views } from "react-big-calendar";
 import moment from "moment";
 
 require("react-big-calendar/lib/css/react-big-calendar.css");
@@ -15,6 +15,7 @@ const MyCalendar = () => {
   const gapi = window.gapi;
   const [valueObject, setValueObject] = useState([]);
   const [calendarEvents, setCalendarEvents] = useState([]);
+  const calendarId = "bib88vd60u8glvl7r69lgenig4@group.calendar.google.com";
 
   useEffect(() => {
     handleClientLoad();
@@ -54,7 +55,7 @@ const MyCalendar = () => {
   function listUpcomingEvents() {
     gapi.client.calendar.events
       .list({
-        calendarId: "bib88vd60u8glvl7r69lgenig4@group.calendar.google.com",
+        calendarId: calendarId,
         timeMin: new Date().toISOString(),
         showDeleted: false,
         singleEvents: true,
@@ -107,7 +108,7 @@ const MyCalendar = () => {
       };
 
       const request = gapi.client.calendar.events.insert({
-        calendarId: "bib88vd60u8glvl7r69lgenig4@group.calendar.google.com",
+        calendarId: calendarId,
         resource: event,
       });
       request.execute((event) => {
@@ -127,7 +128,9 @@ const MyCalendar = () => {
         events={calendarEvents}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 600, width: 800}}
+        views={["month", "day", "agenda"]}
+        popup={true}
+        style={{ height: 600, width: 800 }}
       />
     </Pane>
   );
