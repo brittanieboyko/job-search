@@ -19,7 +19,7 @@ const MyCalendar = () => {
 
   useEffect(() => {
     handleClientLoad();
-  });
+  }, []);
 
   const handleClientLoad = () => {
     gapi.load("client:auth2", initClient);
@@ -131,7 +131,7 @@ const MyCalendar = () => {
         views={["month", "day", "agenda"]}
         popup={true}
         style={{ height: 600, width: 800 }}
-        onSelectEvent={event => alert(event.title)}
+        onSelectEvent={(event) => alert(event.title)}
       />
     </Pane>
   );
