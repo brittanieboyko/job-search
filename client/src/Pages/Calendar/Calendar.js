@@ -116,6 +116,9 @@ const MyCalendar = () => {
       });
     }
   };
+  const handleAlert = ({ title }) => {
+    console.log(title);
+  }
 
   return (
     <Pane>
@@ -131,7 +134,7 @@ const MyCalendar = () => {
         views={["month", "day", "agenda"]}
         popup={true}
         style={{ height: 600, width: 800 }}
-        onSelectEvent={(event) => alert(event.title)}
+        onSelectEvent={handleAlert}
       />
     </Pane>
   );
