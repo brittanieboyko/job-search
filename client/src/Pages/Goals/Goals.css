@@ -1,6 +1,17 @@
-.row {
-    color: chartreuse;
-}
 .column {
-    color: hotpink;
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 800px) {
+    .column {
+        width: 100%;
+    }
 }
