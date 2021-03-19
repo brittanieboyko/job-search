@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
 import { Pane } from "evergreen-ui";
-import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
 
 require("react-big-calendar/lib/css/react-big-calendar.css");
 
@@ -66,7 +66,7 @@ const MyCalendar = () => {
         const events = response.result.items;
 
         if (events.length > 0) {
-          events.map((event) => {
+          events.forEach(event => {
             const formattedEvent = {
               start: event.start.date || event.start.dateTime,
               end: event.end.date || event.end.dateTime,
