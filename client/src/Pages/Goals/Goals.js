@@ -15,7 +15,7 @@ const Goals = () => {
         <h3>Yearly</h3>
       </Pane>
     </Pane>
-    );
+  );
 };
 
 export default Goals;

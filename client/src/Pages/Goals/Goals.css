@@ -1,18 +1,21 @@
   .column {
     float: left;
-    width: 33.33%;
+    display: table-cell;
     padding-left: 70px;
     padding-right: 70px;
+    /* width: 33.33%; */
   }
   
   .row:after {
     content: "";
     display: table;
     clear: both;
+    width: 100%;
   }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .column {
       width: 100%;
+      display: block;
     }
   }
