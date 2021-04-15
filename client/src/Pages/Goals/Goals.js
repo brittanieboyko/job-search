@@ -5,9 +5,15 @@ import "./Goals.css";
 const Goals = () => {
   return (
     <Pane className="row">
-      <Pane className="column">Today</Pane>
-      <Pane className="column">This Month</Pane>
-      <Pane className="column">This Year</Pane>
+      <Pane className="column">
+        <h3>Daily</h3>
+      </Pane>
+      <Pane className="column">
+        <h3>Monthly</h3>
+      </Pane>
+      <Pane className="column">
+        <h3>Yearly</h3>
+      </Pane>
     </Pane>
     );
 };

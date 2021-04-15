@@ -1,17 +1,18 @@
-.column {
+  .column {
     float: left;
     width: 33.33%;
-    padding: 50px;
-}
-
-.row:after {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  
+  .row:after {
     content: "";
     display: table;
     clear: both;
-}
+  }
 
 @media screen and (max-width: 800px) {
     .column {
-        width: 100%;
+      width: 100%;
     }
-}
+  }
