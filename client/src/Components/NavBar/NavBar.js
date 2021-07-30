@@ -11,10 +11,6 @@ const NavBar = () => {
       path: "/goals",
       name: "Goals",
     },
-    {
-      path: "/calendar",
-      name: "Calendar",
-    },
   ]);
 
   return (
