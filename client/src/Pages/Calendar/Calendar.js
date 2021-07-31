@@ -19,7 +19,7 @@ const MyCalendar = () => {
 
   useEffect(() => {
     handleClientLoad();
-  }, []);
+  });
 
   const handleClientLoad = () => {
     gapi.load("client:auth2", initClient);
