@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import JobsCard from "../JobsCard/JobsCard";
 import AddJobModal from "../AddJobModal/AddJobModal";
 import api from "../../api";
-import { Pane } from "evergreen-ui";
+import Container from "react-bootstrap/Container";
 import "./JobsCardContainer.css";
 
 const JobsCardContainer = () => {
@@ -30,7 +30,7 @@ const JobsCardContainer = () => {
   };
 
   return (
-    <Pane marginLeft={50}>
+    <Container>
       <AddJobModal reload={loadJobs} />
       <main>
         {jobs.length ? (
@@ -47,7 +47,7 @@ const JobsCardContainer = () => {
           <p></p>
         )}
       </main>
-    </Pane>
+    </Container>
   );
 };
 
