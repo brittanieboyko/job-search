@@ -1,9 +1,11 @@
 import React from "react";
-import { Button, TextInput, Pane, FormField } from "evergreen-ui";
+import { TextInput, FormField } from "evergreen-ui";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 
 const JobForm = (props) => {
   return (
-    <Pane>
+    <Container>
       <FormField label="Name of Company">
         <TextInput
           type="text"
@@ -33,7 +35,7 @@ const JobForm = (props) => {
       <Button type="submit" onClick={props.handleSubmit}>
         Submit
       </Button>
-    </Pane>
+    </Container>
   );
 };
 

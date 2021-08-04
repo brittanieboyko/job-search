@@ -35,7 +35,7 @@ const AddModal = ({ reload }) => {
       <AddJobCard onClick={handleShow} />
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Add a Job</Modal.Title>
         </Modal.Header>
         <AddJobForm handleChange={handleChange} handleSubmit={handleSubmit} />
         <Modal.Footer>
