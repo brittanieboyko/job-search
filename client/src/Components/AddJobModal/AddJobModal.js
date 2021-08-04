@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Dialog, Pane } from "evergreen-ui";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import AddJobForm from "../AddJobForm/AddJobForm";
 import AddJobCard from "../AddJobCard/AddJobCard";
 import api from "../../api";
@@ -32,16 +33,20 @@ const AddModal = ({ reload }) => {
   return (
     <>
       <AddJobCard onClick={handleShow} />
-      <Pane>
-        <Dialog
-          isShown={show}
-          title="Add A Job"
-          onCloseComplete={() => setShow(false)}
-          hasFooter={false}
-        >
-          <AddJobForm handleChange={handleChange} handleSubmit={handleSubmit} />
-        </Dialog>
-      </Pane>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <AddJobForm handleChange={handleChange} handleSubmit={handleSubmit} />
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
