@@ -15,6 +15,7 @@
     "browserslist": "^4.16.7",
     "evergreen-ui": "^5.1.2",
     "moment": "^2.29.1",
+    "postcss-preset-env": "^6.5.0",
     "react": "^16.14.0",
     "react-big-calendar": "^0.33.6",
     "react-bootstrap": "^2.0.0-beta.4",
@@ -42,7 +43,10 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "defaults",
+      "not IE 11",
+      "maintained node versions"
     ]
   }
 }
