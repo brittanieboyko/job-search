@@ -1,37 +1,38 @@
 import React from "react";
-import { TextInput, FormField } from "evergreen-ui";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
 
 const JobForm = (props) => {
   return (
     <Container>
-      <FormField label="Name of Company">
-        <TextInput
-          type="text"
-          required
-          placeholder="Name"
-          name="companyName"
-          onChange={props.handleChange}
-        />
-      </FormField>
-      <FormField label="Job Title">
-        <TextInput
-          type="text"
-          required
-          placeholder="Title"
-          name="title"
-          onChange={props.handleChange}
-        />
-      </FormField>
-      <FormField label="Date Applied">
-        <TextInput
-          type="date"
-          required
-          name="dateApplied"
-          onChange={props.handleChange}
-        />
-      </FormField>
+      <Form>
+        <Form.Group className="mb-3" controlId="formGroupApplication">
+          <Form.Label>Name of Company</Form.Label>
+          <Form.Control
+            type="text"
+            required
+            placeholder="Name of Company"
+            name="companyName"
+            onChange={props.handleChange}
+          />
+          <Form.Label>Job Title</Form.Label>
+          <Form.Control
+            type="text"
+            required
+            placeholder="Title"
+            name="title"
+            onChange={props.handleChange}
+          />
+          <Form.Label>Date Applied</Form.Label>
+          <Form.Control
+            type="date"
+            required
+            name="dateApplied"
+            onChange={props.handleChange}
+          />
+        </Form.Group>
+      </Form>
       <Button type="submit" onClick={props.handleSubmit}>
         Submit
       </Button>
