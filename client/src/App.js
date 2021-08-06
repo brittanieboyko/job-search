@@ -5,7 +5,6 @@ import Details from "./Pages/Details/Details";
 import NoMatch from "./Pages/NoMatch/NoMatch";
 import Goals from "./Pages/Goals/Goals";
 import MyCalendar from "./Pages/Calendar/Calendar";
-import NavBar from "./Components/NavBar/NavBar";
 import { Heading, Pane } from "evergreen-ui";
 
 const App = () => {
@@ -16,7 +15,6 @@ const App = () => {
           Job Buddy
         </Heading>
         <Pane display="flex">
-          <NavBar />
           <Switch>
             <Route path="/details">
               <Details />
