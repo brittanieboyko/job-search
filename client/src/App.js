@@ -6,15 +6,13 @@ import NoMatch from "./Pages/NoMatch/NoMatch";
 import Goals from "./Pages/Goals/Goals";
 import MyCalendar from "./Pages/Calendar/Calendar";
 import Container from "react-bootstrap/Container";
-import { Heading } from "evergreen-ui";
+import Header from "./Components/Header/Header";
 
 const App = () => {
   return (
     <Container>
       <Router>
-        <Heading size={900} fontFamily={"'Space Grotesk', sans-serif"}>
-          Job Buddy
-        </Heading>
+        <Header />
         <Container display="flex">
           <Switch>
             <Route path="/details">
