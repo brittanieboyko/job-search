@@ -33,9 +33,6 @@ const JobForm = (props) => {
           />
         </Form.Group>
       </Form>
-      <Button type="submit" onClick={props.handleSubmit}>
-        Submit
-      </Button>
     </Container>
   );
 };
