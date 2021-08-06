@@ -5,16 +5,17 @@ import Details from "./Pages/Details/Details";
 import NoMatch from "./Pages/NoMatch/NoMatch";
 import Goals from "./Pages/Goals/Goals";
 import MyCalendar from "./Pages/Calendar/Calendar";
-import { Heading, Pane } from "evergreen-ui";
+import Container from "react-bootstrap/Container";
+import { Heading } from "evergreen-ui";
 
 const App = () => {
   return (
-    <Pane>
+    <Container>
       <Router>
         <Heading size={900} fontFamily={"'Space Grotesk', sans-serif"}>
           Job Buddy
         </Heading>
-        <Pane display="flex">
+        <Container display="flex">
           <Switch>
             <Route path="/details">
               <Details />
@@ -32,9 +33,9 @@ const App = () => {
               <NoMatch />
             </Route>
           </Switch>
-        </Pane>
+        </Container>
       </Router>
-    </Pane>
+    </Container>
   );
 };
 
