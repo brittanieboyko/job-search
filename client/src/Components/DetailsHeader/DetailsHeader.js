@@ -1,7 +1,7 @@
 import React from "react";
 
 const DetailsHeader = ({ job }) => {
-  return <h1>{job.title}</h1>;
+  return <h2>{job.title}</h2>;
 };
 
 export default DetailsHeader;

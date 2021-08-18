@@ -1,11 +1,10 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <Button variant="link" className="title">
+    <h1>
       <Link
         className="title"
         to={{
@@ -14,7 +13,7 @@ const Header = () => {
       >
         Job Buddy
       </Link>
-    </Button>
+    </h1>
   );
 };
 
