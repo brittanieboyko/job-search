@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Button, Pane, Heading } from "evergreen-ui";
+import Container from "react-bootstrap/esm/Container";
+import Button from "react-bootstrap/esm/Button";
 import Draggable from "react-draggable";
 
 const ToDoCard = ({ todo, onClick }) => {
@@ -33,21 +34,10 @@ const ToDoCard = ({ todo, onClick }) => {
         handleStop(e, data);
       }}
     >
-      <Pane
-        elevation={1}
-        float="left"
-        width={200}
-        height={120}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-        background="tint2"
-        ref={nodeRef}
-      >
-        <Heading>{todo.title}</Heading>
+      <Container ref={nodeRef}>
+        <h3>{todo.title}</h3>
         <Button onClick={onClick}>Delete todo</Button>
-      </Pane>
+      </Container>
     </Draggable>
   );
 };
