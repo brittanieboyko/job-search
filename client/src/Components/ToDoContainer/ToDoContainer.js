@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Pane } from "evergreen-ui";
+import Container from "react-bootstrap/Container";
 import ToDoInput from "../ToDoInput/ToDoInput";
 import ToDoCard from "../ToDoCard/ToDoCard";
 import api from "../../api";
@@ -56,7 +56,7 @@ const ToDoContainer = ({ job }) => {
   };
 
   return (
-    <Pane>
+    <Container>
       <ToDoInput
         handleChange={handleChange}
         handleSubmit={handleSubmit}
@@ -82,7 +82,7 @@ const ToDoContainer = ({ job }) => {
           <p></p>
         )}
       </main>
-    </Pane>
+    </Container>
   );
 };
 
