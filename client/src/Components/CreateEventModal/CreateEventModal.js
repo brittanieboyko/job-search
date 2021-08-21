@@ -1,36 +1,42 @@
 import React, { useState } from "react";
-import { Button, PlusIcon, Dialog, Pane } from "evergreen-ui";
 import CreateEventForm from "../CreateEventForm/CreateEventForm";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const AddModal = ( {handleChange, handleSubmit} ) => {
+const AddModal = ({ handleChange, handleSubmit }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
   const onSubmit = (event) => {
-      event.preventDefault();
-      handleSubmit();
-      handleClose();
+    event.preventDefault();
+    handleSubmit();
+    handleClose();
   };
 
   return (
     <>
-      <Button appearance="minimal" variant="primary" onClick={handleShow}>
-        <PlusIcon marginRight={10} />
+      <Button variant="light" onClick={handleShow}>
+        <FontAwesomeIcon className="add-icon" icon={faPlus} />
         Add an event to your calendar!
       </Button>
-      <Pane>
-        <Dialog
-          isShown={show}
-          title="Create Event"
-          onCloseComplete={() => setShow(false)}
-          hasFooter={false}
-        >
-          <CreateEventForm handleChange={handleChange} handleSubmit={onSubmit} />
-        </Dialog>
-      </Pane>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add An Event</Modal.Title>
+        </Modal.Header>
+        <CreateEventForm handleChange={handleChange} handleSubmit={onSubmit} />
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={onSubmit}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

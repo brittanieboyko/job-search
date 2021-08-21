@@ -41,9 +41,6 @@ const CreateEventForm = (props) => {
           onChange={props.handleChange}
         />
       </InputGroup>
-      <Button type="submit" onClick={props.handleSubmit}>
-        Submit
-      </Button>
     </Container>
   );
 };
