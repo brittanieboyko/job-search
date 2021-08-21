@@ -1,20 +1,20 @@
 import React from "react";
-import { Pane } from "evergreen-ui";
+import Container from "react-bootstrap/Container";
 import "./Goals.css";
 
 const Goals = () => {
   return (
-    <Pane className="row">
-      <Pane className="column">
+    <Container className="row">
+      <Container className="column">
         <h3>Daily</h3>
-      </Pane>
-      <Pane className="column">
+      </Container>
+      <Container className="column">
         <h3>Monthly</h3>
-      </Pane>
-      <Pane className="column">
+      </Container>
+      <Container className="column">
         <h3>Yearly</h3>
-      </Pane>
-    </Pane>
+      </Container>
+    </Container>
   );
 };
 

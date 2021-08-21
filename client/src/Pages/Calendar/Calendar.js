@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Pane } from "evergreen-ui";
 import moment from "moment";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import CreateEventModal from "../../Components/CreateEventModal/CreateEventModal";
+import Container from "react-bootstrap/Container";
 
 require("react-big-calendar/lib/css/react-big-calendar.css");
 
@@ -66,7 +66,7 @@ const MyCalendar = () => {
         const events = response.result.items;
 
         if (events.length > 0) {
-          events.forEach(event => {
+          events.forEach((event) => {
             const formattedEvent = {
               start: event.start.date || event.start.dateTime,
               end: event.end.date || event.end.dateTime,
@@ -118,10 +118,10 @@ const MyCalendar = () => {
   };
   const handleAlert = ({ title }) => {
     console.log(title);
-  }
+  };
 
   return (
-    <Pane>
+    <Container>
       <CreateEventModal
         handleChange={handleChange}
         handleSubmit={handleSubmit}
@@ -136,7 +136,7 @@ const MyCalendar = () => {
         style={{ height: 600, width: 800 }}
         onSelectEvent={handleAlert}
       />
-    </Pane>
+    </Container>
   );
 };
 
