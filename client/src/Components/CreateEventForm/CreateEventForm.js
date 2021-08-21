@@ -1,47 +1,50 @@
 import React from "react";
-import { Button, TextInput, Pane, FormField } from "evergreen-ui";
+import Container from "react-bootstrap/Container";
+import FormControl from "react-bootstrap/FormControl";
+import InputGroup from "react-bootstrap/InputGroup";
+import Button from "react-bootstrap/Button";
 
 const CreateEventForm = (props) => {
   return (
-    <Pane>
-      <FormField label="Summary">
-        <TextInput
+    <Container>
+      <InputGroup label="Summary">
+        <FormControl
           type="text"
           required
           placeholder="Event Summary"
           name="eventSummary"
           onChange={props.handleChange}
         />
-      </FormField>
-      <FormField label="Location">
-        <TextInput
+      </InputGroup>
+      <InputGroup label="Location">
+        <FormControl
           type="text"
           required
           placeholder="Event Location"
           name="location"
           onChange={props.handleChange}
         />
-      </FormField>
-      <FormField label="Start Time">
-        <TextInput
+      </InputGroup>
+      <InputGroup label="Start Time">
+        <FormControl
           type="datetime-local"
           required
           name="startTime"
           onChange={props.handleChange}
         />
-      </FormField>
-      <FormField label="End Time">
-        <TextInput
+      </InputGroup>
+      <InputGroup label="End Time">
+        <FormControl
           type="datetime-local"
           required
           name="endTime"
           onChange={props.handleChange}
         />
-      </FormField>
+      </InputGroup>
       <Button type="submit" onClick={props.handleSubmit}>
         Submit
       </Button>
-    </Pane>
+    </Container>
   );
 };
 
