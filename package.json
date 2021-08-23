@@ -13,6 +13,7 @@
     "react-dom": "^17.0.2"
   },
   "scripts": {
+    "start": "cd server && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
