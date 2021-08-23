@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^5.0.2",
-    "react-big-calendar": "^0.33.2",
-    "react-bootstrap": "^2.0.0-beta.4"
+    "react-big-calendar": "^0.33.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "bootstrap": "^5.1.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-beta.5",
+    "react-dom": "^17.0.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
