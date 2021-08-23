@@ -1,0 +1,25 @@
+{
+  "name": "job-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.0.2",
+    "react-big-calendar": "^0.33.2",
+    "react-bootstrap": "^2.0.0-beta.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brittanieboyko/job-search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brittanieboyko/job-search/issues"
+  },
+  "homepage": "https://github.com/brittanieboyko/job-search#readme"
+}
