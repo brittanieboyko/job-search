@@ -2,7 +2,6 @@
   "name": "job-search",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "dependencies": {
     "react-big-calendar": "^0.33.6",
     "express": "^4.17.1"
