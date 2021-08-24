@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "react-big-calendar": "^0.33.6"
+    "react-big-calendar": "^0.33.6",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "bootstrap": "^5.1.0",
