@@ -15,7 +15,7 @@
   },
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "cd ./server && npm start",
+    "start": "cd /server && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "cd ./server && nodemon index.js",
     "client": "npm start --prefix client",
