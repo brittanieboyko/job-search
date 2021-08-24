@@ -15,13 +15,14 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
-    "start": "node index.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node bin/www",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "server": "nodemon index.js",
-    "client": "cd ../client && npm start --prefix client",
+    "client": "cd ../client && npm run start",
+    "install": "cd ../client && npm install",
     "dev": "concurrently \"npm run server\" \"cd ../client && npm start\"",
     "build": "cd ../client && npm run build",
     "heroku-postbuild": "npm run build"
-
   }
 }
