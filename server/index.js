@@ -5,6 +5,7 @@ const cors = require('cors')
 const port = process.env.PORT || 3001;
 const logger = require('morgan');
 const db = require('./db/db');
+const path = require('path');
 
 const apiRouter = require('./routes/apiRoutes');
 
