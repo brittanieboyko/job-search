@@ -5,7 +5,6 @@ const cors = require('cors')
 const port = process.env.PORT || 3001;
 const logger = require('morgan');
 const db = require('./db/db');
-const path = require('path');
 
 const apiRouter = require('./routes/apiRoutes');
 
@@ -21,14 +20,10 @@ if (process.env.NODE_ENV === "production") {
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
 app.use('/api', apiRouter);
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
 module.exports = app;
