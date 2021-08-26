@@ -19,6 +19,6 @@
     "server": "nodemon index.js",
     "client": "cd ../client && npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"cd ../client && npm start\"",
-    "heroku-postbuild": "npm run build --prefix client"
+    "heroku-postbuild": "cd ../client && npm install && npm run build"
   }
 }
